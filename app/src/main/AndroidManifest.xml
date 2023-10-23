@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="34">
         <activity
+            android:name=".FormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

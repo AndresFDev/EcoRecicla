@@ -15,7 +15,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Categorías"
-        app:icon="@drawable/ic_category" />
+        app:icon="@drawable/ic_category"
+        app:toggleCheckedStateOnClick="true"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnStats"

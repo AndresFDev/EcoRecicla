@@ -35,7 +35,6 @@
     </style>
 
     <style name="ButtonCategoriesStyle" parent="Widget.Material3.Button">
-        <item name="android:textSize">20sp</item>
         <item name="textAllCaps">true</item>
         <item name="fontFamily">@font/product_sans_regular</item>
         <item name="cornerRadius">15dp</item>

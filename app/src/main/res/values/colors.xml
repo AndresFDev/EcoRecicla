@@ -9,5 +9,6 @@
     <color name="colorOnSecondary">#284907</color>
     <color name="colorSecondaryContainer">#C8E6C9</color>
     <color name="colorBackground">#E8F5E9</color>
+    <color name="colorError">#FF0000</color>
 
 </resources>

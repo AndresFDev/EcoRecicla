@@ -13,6 +13,7 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
         <item name="colorOnBackground">@color/colorBackground</item>
+        <item name="colorOutline">@color/colorPrimary</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>
         <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>

@@ -35,15 +35,17 @@
     </style>
 
     <style name="ButtonCategoriesStyle" parent="Widget.Material3.Button">
-        <item name="textAllCaps">true</item>
+        <item name="textAllCaps">false</item>
         <item name="fontFamily">@font/product_sans_regular</item>
         <item name="cornerRadius">15dp</item>
         <item name="iconGravity">top</item>
-        <item name="iconSize">55dp</item>
+        <item name="iconSize">60dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="android:layout_columnWeight">1</item>
-        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_height">130dp</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:paddingTop">16dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
 </resources>

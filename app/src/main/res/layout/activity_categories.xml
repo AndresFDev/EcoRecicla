@@ -5,6 +5,117 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CategoriesActivity">
-    
+
+    <include
+        android:id="@+id/tv_title"
+        layout="@layout/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="Categorías"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toTopOf="@id/gl_categories"/>
+
+    <GridLayout
+        android:id="@+id/gl_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_plastic"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="Plásticos"
+            app:icon="@drawable/ic_plastic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_paper"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="Papelería"
+            app:icon="@drawable/ic_paper" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_electronics"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:text="Electrónico"
+            app:icon="@drawable/ic_electronic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_glass"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:text="Vidrios"
+            app:icon="@drawable/ic_glass" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_card"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="Cartón"
+            app:icon="@drawable/ic_card" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_steel"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:text="Metales"
+            app:icon="@drawable/ic_steel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/texiles"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="Textiles"
+            app:icon="@drawable/ic_textil" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_batteries"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:text="Baterías"
+            app:icon="@drawable/ic_batteries" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_art_home"
+            style="@style/ButtonCategoriesStyle"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:text="Art. Hogar"
+            app:icon="@drawable/ic_art_home" />
+
+    </GridLayout>
+
+    <include
+        android:id="@+id/menu"
+        layout="@layout/nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

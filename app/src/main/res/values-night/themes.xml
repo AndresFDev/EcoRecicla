@@ -14,5 +14,6 @@
         <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
         <item name="colorOnBackground">@color/colorPrimaryDark</item>
         <item name="colorOutline">@color/white</item>
+        <item name="android:colorBackground">@color/colorPrimaryDark</item>
     </style>
 </resources>

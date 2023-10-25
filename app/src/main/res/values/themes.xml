@@ -41,7 +41,7 @@
         <item name="fontFamily">@font/product_sans_bold</item>
     </style>
 
-    <style name="ButtonBack" parent="Widget.Material3.Button">
+    <style name="ButtonBack" parent="Widget.Material3.Button.IconButton.Outlined">
         <item name="icon">@drawable/ic_back</item>
         <item name="iconTint">@color/colorPrimary</item>
         <item name="iconSize">32dp</item>

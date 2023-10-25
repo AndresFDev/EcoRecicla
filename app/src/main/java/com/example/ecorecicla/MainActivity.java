@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navButtonsClick() {
-
+/*
         btnCategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /* btnStats.setOnClickListener(new View.OnClickListener() {
+         btnStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), StatsActivity.class);

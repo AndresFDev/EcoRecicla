@@ -41,6 +41,16 @@
         <item name="fontFamily">@font/product_sans_bold</item>
     </style>
 
+    <style name="ButtonBack" parent="Widget.Material3.Button">
+        <item name="icon">@drawable/ic_back</item>
+        <item name="iconTint">@color/colorPrimary</item>
+        <item name="iconSize">32dp</item>
+        <item name="iconGravity">start</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
     <style name="ButtonCategoriesStyle" parent="Widget.Material3.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
@@ -58,12 +68,12 @@
     <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
-        <item name="hintTextColor">?attr/colorOnSurface</item>
+        <item name="hintTextColor">@color/colorSecondary</item>
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorOnSurface">@color/colorOnPrimary</item>
+        <item name="colorOnSurface">@color/colorPrimary</item>
         <item name="colorError">@color/colorError</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>
         <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>

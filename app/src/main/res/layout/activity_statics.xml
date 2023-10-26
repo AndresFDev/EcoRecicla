@@ -27,17 +27,17 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
+        android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:scrollbars="none"
-        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
@@ -495,6 +495,7 @@
     </ScrollView>
 
     <include
+        android:id="@+id/appMenu"
         layout="@layout/nav_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

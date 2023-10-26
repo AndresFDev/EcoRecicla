@@ -102,7 +102,6 @@
         <item name="boxCornerRadiusBottomStart">25dp</item>
         <item name="boxCornerRadiusTopEnd">25dp</item>
         <item name="boxCornerRadiusTopStart">25dp</item>
-        <item name="android:layout_marginVertical">8dp</item>
     </style>
 
 </resources>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="plasticType">
-        <item>Automóvil</item>
-        <item>Motocicleta</item>
-        <item>Metro</item>
-        <item>Bicicleta</item>
-        <item>A pie</item>
+        <item>PET (Polietileno Tereftalato)</item>
+        <item>HDPE (Polietileno de Alta Densidad)</item>
+        <item>PVC (Policloruro de Vinilo)</item>
+        <item>LDPE (Polietileno de Baja Densidad)</item>
+        <item>PP (Polipropileno)</item>
+        <item>PS (Poliestireno)</item>
+        <item>Otros</item>
     </array>
 </resources>

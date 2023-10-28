@@ -6,77 +6,60 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:background="#DCEDC8"
+    android:orientation="vertical"
     android:gravity="center_vertical|center_horizontal"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <!-- logo  -->
+
+    <ImageView
+        android:id="@+id/img_logo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="#DCEDC8"
+        android:layout_height="120dp"
+        android:contentDescription="@string/imag_logo"
+        android:src="@drawable/img_logo"
+        android:layout_gravity="center"
+        app:tint="@color/colorPrimary" />
+
+    <!-- nombre de la app -->
+    <TextView
+        android:id="@+id/texapp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/product_sans_bold"
         android:gravity="center"
-        android:orientation="vertical">
+        android:text="@string/texapp_name"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="38sp" />
 
-        <!-- logo  -->
+    <!-- Lema de la app -->
+    <TextView
+        android:id="@+id/texlema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texlema"
+        android:gravity="center"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/img_logo"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:contentDescription="@string/imag_logo"
-            android:src="@drawable/img_logo"
-            app:tint="@color/colorPrimary" />
 
-        <!-- nombre de la app -->
-        <TextView
-            android:id="@+id/texapp_name"
-            ndroid:textSize="40sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/product_sans_bold"
-            android:gravity="center"
-            android:text="@string/texapp_name"
-            android:textColor="@color/colorPrimary"
-            android:textSize="38sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Botón para iniciar sesión -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonlogin"
+        android:textSize="34sp"        />
 
-        <!-- Lema de la app -->
+    <!-- Botón para registrarse -->
 
-        <TextView
-            android:id="@+id/texlema"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="22sp"
-            android:text="@string/texlema"
-            android:textColor="@color/colorOnSecondary"
-            android:textSize="20dp" />
-
-        <!-- Botón para iniciar sesión -->
-        <TextView
-            android:id="@+id/texwelcome"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:text="@string/texvwelcome"
-            android:textAlignment="center"
-            android:textColor="#284907"
-            android:textSize="34dp" />
-
-        <Button
-            android:id="@+id/loginButton"
-            android:gravity="center"
-            android:layout_width="346dp"
-            android:layout_height="wrap_content"
-            android:text="INICIAR SESION"
-            android:textSize="34sp" />
-        <!-- Botón para registrarse -->
-
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REGISTRARSE"
-            android:textSize="34sp"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/butregister"
+        android:textSize="34sp" />
 
 </LinearLayout>

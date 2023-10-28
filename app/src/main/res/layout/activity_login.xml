@@ -101,8 +101,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:onClick="login"
-                android:text="@string/loginButton"
-                android:textSize="27sp" />
+                android:textSize="27sp"
+                android:text="@string/loginButton"/>
 
             <!-- Botón ¿No tienes una cuenta? para registrarse -->
             <Button

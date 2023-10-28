@@ -5,7 +5,6 @@
     <string name="edtEmail">Ingresa tu correo</string>
     <string name="edtPassword">Contraseña</string>
     <string name="txtForgotPassword">¿Olvidaste tu contraseña?</string>
-    <string name="loginButton">INGRESAR</string>
     <string name="butregister">REGISTRATE</string>
     <string name="texvwelcome">¡Bienvenido (a)!</string>
     <string name="texlema">Recicla y da luz verde al planeta</string>
@@ -18,5 +17,7 @@
     <string name="sign_up">REGISTRATE</string>
     <string name="no_accout_sign_up">¿No tienes una cuenta?Registrate Aqui</string>
     <string name="butacconunt_login">¿Ya tienes una cuenta? Inicia sesión ahora</string>
+    <string name="buttonlogin">INICIAR SESION</string>
+    <string name="loginButton">INICIAR SESION</string>
 
 </resources>

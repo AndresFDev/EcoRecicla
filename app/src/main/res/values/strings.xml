@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">EcoRecicla</string>
+    <string name="imag_logo">logo</string>
+    <string name="texapp_name">EcoRecicla</string>
+    <string name="edtEmail">Ingresa tu correo</string>
+    <string name="edtPassword">Contraseña</string>
+    <string name="txtForgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="loginButton">INGRESAR</string>
+    <string name="butregister">REGISTRATE</string>
+    <string name="texvwelcome">¡Bienvenido (a)!</string>
+    <string name="texlema">Recicla y da luz verde al planeta</string>
+    <string name="tex_welcome">Bienvenido</string>
+    <string name="edt_name">Nombre</string>
+    <string name="edtpassword">Ingresa tu contraseña</string>
+    <string name="edt_Password">Confirma tu contraseña</string>
+    <string name="register">Regístrate para comenzar</string>
+    <string name="checkbox">Acepta Terminos y Condiciones</string>
+    <string name="sign_up">REGISTRATE</string>
+    <string name="no_accout_sign_up">¿No tienes una cuenta?Registrate Aqui</string>
+    <string name="butacconunt_login">¿Ya tienes una cuenta? Inicia sesión ahora</string>
+
 </resources>

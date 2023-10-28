@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="20dp"
+    android:background="#284907"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_vertical"
+    tools:context=".SplashActivity">
+
+    <!-- imagen logo  -->
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:contentDescription="@string/imag_logo"
+        android:src="@drawable/img_logo"/>
+
+    <!-- nombre de la app -->
+
+    <TextView
+        android:id="@+id/texapp_name"
+        android:textSize="40sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/product_sans_bold"
+        android:gravity="center"
+        android:text="@string/texapp_name"
+        android:textColor="#DCEDC8"/>
+
+    <!-- Lema de la app -->
+
+    <TextView
+        android:id="@+id/texlema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/texlema"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="45dp"
+        android:textColor="#DCEDC8"
+        android:gravity="center"/>
+</LinearLayout>

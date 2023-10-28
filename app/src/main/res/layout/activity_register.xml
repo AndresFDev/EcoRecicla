@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="#DCEDC8"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <!-- logo superior -->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:contentDescription="@string/imag_logo"
+        android:src="@drawable/img_logo"
+        app:tint="@color/colorPrimary"/>
+
+    <!-- nombre de la app -->
+
+    <TextView
+        android:id="@+id/texapp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/product_sans_bold"
+        android:gravity="center"
+        android:text="@string/texapp_name"
+        android:textColor="#284907"
+        android:textSize="40sp" />
+    <!-- Lema de la app -->
+    <TextView
+        android:id="@+id/texlema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texlema"
+        android:gravity="center"
+        android:textColor="@color/colorOnSecondary"
+        android:textSize="20dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="464dp"
+        android:backgroundTint="#DCEDC8"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#9FC96C"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Regístrate para comenzar-->
+
+            <TextView
+                android:id="@+id/texregister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textAlignment="center"
+                android:textColor="#284907"
+                android:textSize="24dp" />
+
+            <!-- Campo de entrada para Nombre -->
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@string/edt_name"
+                android:textSize="20sp" />
+            <!-- campo de entrada para el correo electronico-->
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"
+                android:text="@string/edtEmail"
+                android:textSize="20sp" />
+            <!-- Campo de entrada para la contraseña -->
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@string/edtPassword"
+                android:textSize="20sp" />
+            <!-- Campo de entrada para la comfirma contraseña -->
+            <EditText
+                android:id="@+id/edt_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@string/edt_Password"
+                android:textSize="20sp" />
+
+            <!-- Acepta Terminos y Condiciones  -->
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkbox"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/butregister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/butregister"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/butacconunt_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/butacconunt_login" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

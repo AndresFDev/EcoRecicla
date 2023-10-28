@@ -42,13 +42,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="464dp"
+        android:layout_height="match_parent"
         android:backgroundTint="#DCEDC8"
         android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:background="#9FC96C"
             android:gravity="center"

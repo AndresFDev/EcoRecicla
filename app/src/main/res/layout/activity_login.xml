@@ -110,6 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:onClick="register"
                 android:text="@string/no_accout_sign_up"
                 android:textSize="13sp" />
         </LinearLayout>

@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         btnStats = findViewById(R.id.btnStats);
         btnTips = findViewById(R.id.btnTips);
 
-        navButtonsClick();
+        navButtons();
 
     }
 
-    public void navButtonsClick() {
+    public void navButtons() {
 
         btnCategories.setOnClickListener(new View.OnClickListener() {
             @Override

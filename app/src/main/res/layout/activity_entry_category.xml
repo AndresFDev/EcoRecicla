@@ -94,7 +94,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_weight"
-                        style="@style/TextAppearance.App.BodySmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"
@@ -116,7 +115,8 @@
                     style="@style/CustomDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Selecciona un tipo">
+                    android:hint="Selecciona un tipo"
+                    app:endIconTint="@color/colorPrimary">
 
                     <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/et_plastic_type"
@@ -147,7 +147,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_collect_date"
-                        style="@style/TextAppearance.App.BodySmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="date"
@@ -174,7 +173,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_weight_price"
-                        style="@style/TextAppearance.App.BodySmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"

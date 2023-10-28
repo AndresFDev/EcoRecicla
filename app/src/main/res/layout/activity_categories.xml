@@ -11,19 +11,16 @@
         android:id="@+id/tv_title"
         layout="@layout/app_logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_category"
+        style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:fontFamily="@font/product_sans_bold"
         android:gravity="center"
-        android:text="Categorías"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="25sp"/>
+        android:text="Categorías" />
 
     <GridLayout
         android:id="@+id/gl_categories"
@@ -113,6 +110,6 @@
         android:id="@+id/menu"
         layout="@layout/nav_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -14,6 +14,7 @@
         <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
         <item name="colorOnBackground">@color/colorBackground</item>
         <item name="colorOutline">@color/colorPrimary</item>
+        <item name="elevationOverlayColor">@color/colorPrimary</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>
         <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
@@ -24,7 +25,7 @@
     <style name="NavMenu">
         <item name="cardBackgroundColor">@color/colorPrimary</item>
         <item name="strokeWidth">0dp</item>
-        <item name="cardCornerRadius">20dp</item>
+        <item name="cardCornerRadius">@dimen/cornerLarge</item>
     </style>
 
     <style name="MenuItemStyle">
@@ -57,10 +58,10 @@
         <item name="android:layout_columnWeight">1</item>
         <item name="android:layout_rowWeight">1</item>
         <item name="android:layout_margin">8dp</item>
-        <item name="android:paddingTop">32dp</item>
-        <item name="cornerRadius">15dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="cornerRadius">@dimen/cornerMedium</item>
         <item name="fontFamily">@font/product_sans_regular</item>
-        <item name="iconGravity">top</item>
+        <item name="iconGravity">textTop</item>
         <item name="iconSize">60dp</item>
         <item name="textAllCaps">false</item>
     </style>
@@ -68,7 +69,9 @@
     <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
-        <item name="hintTextColor">@color/colorSecondary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorOnSecondary</item>
+        <item name="android:textColorHint">@color/colorOnSecondary</item>
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="">
@@ -92,16 +95,24 @@
 
     <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">25dp</item>
+        <item name="cornerSize">@dimen/cornerXLarge</item>
     </style>
 
     <style name="CustomDropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="android:textColorHint">@color/colorPrimaryContainer</item>
         <item name="itemTextColor">@color/white</item>
-        <item name="boxCornerRadiusBottomEnd">25dp</item>
-        <item name="boxCornerRadiusBottomStart">25dp</item>
-        <item name="boxCornerRadiusTopEnd">25dp</item>
-        <item name="boxCornerRadiusTopStart">25dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/cornerXLarge</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/cornerXLarge</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/cornerXLarge</item>
+        <item name="boxCornerRadiusTopStart">@dimen/cornerXLarge</item>
+    </style>
+
+    <style name="TitleStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>

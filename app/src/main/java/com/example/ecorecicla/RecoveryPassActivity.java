@@ -1,7 +1,6 @@
 package com.example.ecorecicla;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,28 +8,21 @@ import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
 
-public class SignUpActivity extends AppCompatActivity {
+public class RecoveryPassActivity extends AppCompatActivity {
 
-    private MaterialButton btnBack, btnSignUp, btnLogin;
-    private LinearLayoutCompat llBtnSignup;
-
+    private MaterialButton btnBack, btnSendRecoveryPass, btnLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
-
-        llBtnSignup = findViewById(R.id.llBtnSignup);
-
-        llBtnSignup.setElevation(4f);
+        setContentView(R.layout.activity_recovery_pass);
 
         managerButtons();
-
     }
 
     public void managerButtons() {
         btnBack = findViewById(R.id.btnBack);
+        btnSendRecoveryPass = findViewById(R.id.btnSendRecoveryPass);
         btnLogin = findViewById(R.id.btnLogin);
-        btnSignUp = findViewById(R.id.btnSignUp);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +30,11 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+
+        btnSendRecoveryPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CategoriesActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cornerXLarge">25dp</dimen>
+    <dimen name="cornerLarge">20dp</dimen>
+    <dimen name="cornerMedium">15dp</dimen>
+    <dimen name="cornerSmall">10dp</dimen>
+</resources>

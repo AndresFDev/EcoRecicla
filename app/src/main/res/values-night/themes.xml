@@ -16,4 +16,12 @@
         <item name="colorOutline">@color/white</item>
         <item name="android:colorBackground">#000000</item>
     </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorOnSecondary</item>
+        <item name="android:textColorHint">@color/colorOnSecondary</item>
+    </style>
 </resources>

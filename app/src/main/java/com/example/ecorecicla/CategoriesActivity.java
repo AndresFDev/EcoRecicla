@@ -16,11 +16,11 @@ public class CategoriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
-        btnsClick();
+        managerButtons();
 
     }
 
-    public void btnsClick() {
+    public void managerButtons() {
         btn_plastic = findViewById(R.id.btn_plastic);
 
         btn_plastic.setOnClickListener(new View.OnClickListener() {

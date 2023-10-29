@@ -13,31 +13,26 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBack"
+            style="@style/ButtonBack"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ButtonBack"/>
+            android:layout_height="wrap_content" />
 
         <include
             android:id="@+id/tv_title"
             layout="@layout/app_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center" />
 
     </FrameLayout>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_category_sellected"
+        android:id="@+id/tvCategory"
+        style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/product_sans_bold"
-        android:text="Plástico"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:padding="32dp"
-        android:textAllCaps="true"
-        android:textSize="32sp" />
+        android:text="@string/plastic" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,19 +44,19 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/cv_form"
+                android:id="@+id/cvForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/form_corner_top"
-                android:padding="16dp"
-                android:backgroundTint="@color/colorPrimaryContainer">
+                android:backgroundTint="@color/colorPrimaryContainer"
+                android:padding="16dp">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Nueva Entrada"
+                    android:text="@string/newEntry"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="32sp" />
@@ -69,7 +64,7 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/cv_form_down"
+                android:id="@+id/cvFormDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/form_corner_bottom"
@@ -82,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/product_sans_regular"
-                    android:text="Cantidad de plástico"
+                    android:text="@string/it1"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -96,8 +91,8 @@
                         android:id="@+id/et_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:hint="Kg" />
+                        android:hint="@string/kg"
+                        android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/product_sans_regular"
-                    android:text="Tipo de plástico"
+                    android:text="@string/tvDw1"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -115,7 +110,7 @@
                     style="@style/CustomDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Selecciona un tipo"
+                    android:hint="@string/dd1"
                     app:endIconTint="@color/colorPrimary">
 
                     <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -123,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
-                        app:simpleItems="@array/plasticType"/>
+                        app:simpleItems="@array/plasticType" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/product_sans_regular"
-                    android:text="Fecha de recolección"
+                    android:text="@string/tv2"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -141,16 +136,16 @@
                     style="@style/Widget.App.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:endIconMode="custom"
                     app:endIconDrawable="@drawable/ic_date"
+                    app:endIconMode="custom"
                     app:endIconTint="@color/colorPrimary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_collect_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="date"
-                        android:hint="DD/MM/AAAA" />
+                        android:hint="@string/dateFormat"
+                        android:inputType="date" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/product_sans_regular"
-                    android:text="Valor por Kg"
+                    android:text="@string/tv3"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -175,18 +170,19 @@
                         android:id="@+id/et_weight_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:hint="$" />
+                        android:hint="@string/dollarSymbol"
+                        android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSendData"
+                    style="@style/ButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
                     android:paddingVertical="8dp"
-                    android:text="Guardar datos"
-                    style="@style/ButtonStyle"/>
+                    android:text="@string/saveData" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

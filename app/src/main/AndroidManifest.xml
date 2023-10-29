@@ -13,22 +13,11 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="34">
         <activity
-            android:name=".RecoveryPassActivity"
+            android:name=".TipsDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
-            android:exported="false"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name=".CategoriesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EntryCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true"
-            android:windowSoftInputMode="stateHidden">
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +25,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".RecoveryPassActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EntryCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatsDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TipsActivity"
             android:exported="false" />
     </application>
 

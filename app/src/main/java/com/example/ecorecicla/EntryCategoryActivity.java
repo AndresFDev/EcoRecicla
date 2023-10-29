@@ -2,8 +2,11 @@ package com.example.ecorecicla;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -15,23 +18,44 @@ import java.util.Locale;
 
 public class EntryCategoryActivity extends AppCompatActivity {
     private TextInputLayout tl_3;
-    private MaterialButton btn_back;
+    private MaterialButton btnBack, btnSendData;
+    private TextView tvCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry_category);
-        btn_back = findViewById(R.id.btn_back);
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
+        tvCategory = findViewById(R.id.tvCategory);
+
+        String title = getIntent().getStringExtra("title");
+        tvCategory.setText(title);
+
+        managerButtons();
+        datePicker();
+    }
+
+    public void managerButtons() {
+        btnBack = findViewById(R.id.btnBack);
+        btnSendData = findViewById(R.id.btnSendData);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
 
-        datePicker();
+        btnSendData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), StatsActivity.class);
+                Toast.makeText(getApplicationContext(), "¡Guardado exitoso!", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
     }
+
     public void datePicker(){
         tl_3 = findViewById(R.id.tl_3);
         MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()//.setInputMode(MaterialDatePicker.INPUT_MODE_TEXT)

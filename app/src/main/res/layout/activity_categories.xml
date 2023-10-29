@@ -8,22 +8,20 @@
     tools:context=".CategoriesActivity">
 
     <include
-        android:id="@+id/tv_title"
+        android:id="@+id/tvTitle"
         layout="@layout/app_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_category"
+        android:id="@+id/tvCategory"
         style="@style/TitleStyle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:gravity="center"
-        android:text="Categorías" />
+        android:layout_height="wrap_content"
+        android:text="@string/categories" />
 
     <GridLayout
-        android:id="@+id/gl_categories"
+        android:id="@+id/glCategories"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="8dp"
@@ -33,75 +31,75 @@
         android:rowCount="3">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_plastic"
+            android:id="@+id/btnPlastic"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="0"
             android:layout_column="0"
-            android:text="Plásticos"
+            android:text="@string/plastic"
             app:icon="@drawable/ic_plastic" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_paper"
+            android:id="@+id/btnPaper"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="0"
             android:layout_column="1"
-            android:text="Papelería"
+            android:text="@string/paper"
             app:icon="@drawable/ic_paper" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_electronics"
+            android:id="@+id/btnElectronics"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="0"
             android:layout_column="2"
-            android:text="Electrónico"
+            android:text="@string/electronic"
             app:icon="@drawable/ic_electronic" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_glass"
+            android:id="@+id/btnGlass"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="1"
             android:layout_column="0"
-            android:text="Vidrios"
+            android:text="@string/glass"
             app:icon="@drawable/ic_glass" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_card"
+            android:id="@+id/btnCard"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="1"
             android:layout_column="1"
-            android:text="Cartón"
+            android:text="@string/cardboard"
             app:icon="@drawable/ic_card" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_steel"
+            android:id="@+id/btnSteel"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="1"
             android:layout_column="2"
-            android:text="Metales"
+            android:text="@string/steel"
             app:icon="@drawable/ic_steel" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/texiles"
+            android:id="@+id/btnTexiles"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="2"
             android:layout_column="0"
-            android:text="Textiles"
+            android:text="@string/textiles"
             app:icon="@drawable/ic_textil" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_batteries"
+            android:id="@+id/btnBatteries"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="2"
             android:layout_column="1"
-            android:text="Baterías"
+            android:text="@string/batteries"
             app:icon="@drawable/ic_batteries" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_art_home"
+            android:id="@+id/btnArtHome"
             style="@style/ButtonCategoriesStyle"
             android:layout_row="2"
             android:layout_column="2"
-            android:text="Art. Hogar"
+            android:text="@string/artHome"
             app:icon="@drawable/ic_art_home" />
 
     </GridLayout>

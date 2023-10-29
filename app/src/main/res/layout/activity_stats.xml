@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatsActivity">
+
+    <include
+        android:id="@+id/appLogo"
+        layout="@layout/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stats"
+        app:layout_constraintTop_toBottomOf="@id/appLogo" />
+
+    <ScrollView
+        android:id="@+id/svStats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/appMenu"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_plastic"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/tvPlastic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/product_sans_bold"
+                            android:text="@string/plastic"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <GridLayout
+                        android:id="@+id/glPlastic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="4">
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/RecyDay" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valRecyDay"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/recyMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueRecyMonth"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/monthObject" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMonthObject"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/missingMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMissingMonth"
+                            android:textAlignment="textEnd" />
+
+                    </GridLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPlastic"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_paper"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/tvPaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/product_sans_bold"
+                            android:text="@string/paper"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <GridLayout
+                        android:id="@+id/glPaper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="4">
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/RecyDay" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valRecyDay"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/recyMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueRecyMonth"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/monthObject" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMonthObject"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/missingMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMissingMonth"
+                            android:textAlignment="textEnd" />
+
+                    </GridLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPaper"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_glass"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/tvGlass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/product_sans_bold"
+                            android:text="@string/glass"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="20sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <GridLayout
+                        android:id="@+id/glGlass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="4">
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/RecyDay" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valRecyDay"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/recyMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueRecyMonth"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/monthObject" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMonthObject"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:text="@string/missingMonth" />
+
+                        <TextView
+                            style="@style/TextCardStatsStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="3"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:text="@string/valueMissingMonth"
+                            android:textAlignment="textEnd" />
+
+                    </GridLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGlass"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/appMenu"
+        layout="@layout/nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

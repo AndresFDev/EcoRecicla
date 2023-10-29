@@ -26,8 +26,7 @@
                 style="@style/TitleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
-                android:text="Registro" />
+                android:text="@string/signUpVar1" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -43,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Nombre de usuario"
+                    android:text="@string/userName"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
@@ -59,7 +58,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="Nombre de usuario"
+                        android:hint="@string/userName"
                         android:inputType="textPersonName" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Correo electrónico"
+                    android:text="@string/email"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
@@ -83,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="Correo electrónico"
+                        android:hint="@string/email"
                         android:inputType="textEmailAddress" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -93,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Contraseña"
+                    android:text="@string/password"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
@@ -109,7 +108,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="Contraseña"
+                        android:hint="@string/password"
                         android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -119,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Confirmar contraseña"
+                    android:text="@string/confirmPass"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
@@ -133,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="Confirmar contraseña"
+                        android:hint="@string/confirmPass"
                         android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Acepta terminos y condiciones"
+                    android:text="@string/termnsConditions"
                     android:textColor="@color/colorPrimary"
                     app:buttonTint="@color/colorPrimary" />
 
@@ -152,7 +151,7 @@
                     style="@style/ButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Registrarte" />
+                    android:text="@string/signUpvar2" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -172,17 +171,17 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_bold"
                     android:paddingVertical="12dp"
-                    android:text="¿Ya tienes una cuenta?"
+                    android:text="@string/haveAccount"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogin"
-                    style="@style/ButtonStyle"
+                    style="@style/SecondaryButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Inicia Sesion" />
+                    android:text="@string/loginVar1" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

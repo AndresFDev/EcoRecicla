@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="20dp"
                     android:fontFamily="@font/product_sans_bold"
-                    android:text="Restablecer contraseña"
+                    android:text="@string/recoveryPass"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="30sp" />
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_bold"
                     android:paddingVertical="4dp"
-                    android:text="¿Olvidaste tu contraseña?"
+                    android:text="@string/forguetPass"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_regular"
                     android:paddingVertical="8dp"
-                    android:text="Por favor, intruzca la dirección de correo electrónico que utilizó para registrarse. Recibirá un enlace para restablecer su contraseña"
+                    android:text="@string/recoveryBody"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="12sp" />
@@ -71,7 +71,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:hint="Correo electrónico"
+                        android:hint="@string/email"
                         android:inputType="textEmailAddress" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -81,7 +81,7 @@
                     style="@style/ButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enviar correo de recuperación"
+                    android:text="@string/sendRecoveryEmail"
                     android:textSize="18sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -101,18 +101,17 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/product_sans_bold"
                     android:paddingVertical="12dp"
-                    android:text="¿Recordaste tu contraseña?"
+                    android:text="@string/rememberPass"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogin"
-                    style="@style/ButtonStyle"
+                    style="@style/SecondaryButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Inicia Sesion"
-                    app:backgroundTint="@color/colorError" />
+                    android:text="@string/loginVar1" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

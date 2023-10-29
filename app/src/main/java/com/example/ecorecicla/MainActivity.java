@@ -17,32 +17,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnCategories = findViewById(R.id.btnCategories);
-        btnStats = findViewById(R.id.btnStats);
-        btnTips = findViewById(R.id.btnTips);
-
         navButtons();
 
     }
 
     public void navButtons() {
 
+        btnCategories = findViewById(R.id.btnCategories);
+        btnStats = findViewById(R.id.btnStats);
+        btnTips = findViewById(R.id.btnTips);
+
         btnCategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CategoriesActivity.class);
-                startActivity(intent);
-            }
-        });
-/*
-         btnStats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), StatsActivity.class);
-                startActivity(intent);
+                Intent categoriesIntent = new Intent(getApplicationContext(), CategoriesActivity.class);
+                startActivity(categoriesIntent);
             }
         });
 
+         btnStats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent StatsIntent = new Intent(getApplicationContext(), StatsActivity.class);
+                startActivity(StatsIntent);
+            }
+        });
+/*
         btnTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

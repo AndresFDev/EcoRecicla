@@ -44,18 +44,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Inicializar vistas aquí (puedes tener vistas generales para fecha, cantidad, precio, etc.)
             tvDate = itemView.findViewById(R.id.tvDate);
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
             tvPrice = itemView.findViewById(R.id.tvPrice);
         }
 
         public void bindCategory(Category category) {
-            // Actualizar las vistas según la información proporcionada por el objeto Category
             tvDate.setText(category.getDate());
-            tvQuantity.setText(category.getQuantity());
-            tvPrice.setText(category.getPrice());
-            // Puedes agregar más lógica aquí según sea necesario
+            tvQuantity.setText(category.getQuantity()+" Kg");
+            tvPrice.setText(category.getPrice()+ " $");
         }
     }
 }

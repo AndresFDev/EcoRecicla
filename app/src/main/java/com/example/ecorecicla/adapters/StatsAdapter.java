@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ import com.example.ecorecicla.models.Stats;
 import com.example.ecorecicla.models.SteelItem;
 import com.example.ecorecicla.models.User;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.text.DecimalFormat;
@@ -71,10 +73,11 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
     private void showDetails(Object clickedItem) {
         UserData userData = new UserData(context);
         User userId = userData.getCurrentUser();
+        EntryData entryData = new EntryData(context);
+        entry = entryData.getEntry();
+
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.bottom_sheet);
-
-        MaterialTextView tvSheet = bottomSheetDialog.findViewById(R.id.tvSheet);
         MaterialTextView tvTitle = bottomSheetDialog.findViewById(R.id.tvTitle);
         RecyclerView rvObjets = bottomSheetDialog.findViewById(R.id.rvObjets);
 
@@ -83,68 +86,46 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
 
             String selectedCategory = getSelectedCategory(stats);
 
-            if (selectedCategory != null && entry != null) {
-                List<Category> categoryList = processCategoryList((List<Category>) entry, userId.getId());
-                CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList);
+            if (selectedCategory != null) {
+                List<Category> selectedCategoryList;
+
+                switch (selectedCategory) {
+                    case "PLASTIC":
+                        selectedCategoryList = processPlasticCategory(entry.getPlastic(), userId.getId());
+                        break;
+                    case "PAPER":
+                        selectedCategoryList = processCategoryList(entry.getPaperList(), selectedCategory, userId.getId());
+                        break;
+                    case "ELECTRONIC":
+                        selectedCategoryList = processCategoryList(entry.getElectronicList(), selectedCategory, userId.getId());
+                        break;
+                    case "GLASS":
+                        selectedCategoryList = processCategoryList(entry.getGlassList(), selectedCategory, userId.getId());
+                        break;
+                    case "CARDBOARD":
+                        selectedCategoryList = processCategoryList(entry.getCardboardList(), selectedCategory, userId.getId());
+                        break;
+                    case "STEEL":
+                        selectedCategoryList = processSteelCategory(entry.getSteel(), userId.getId());
+                        break;
+                    case "TEXTILES":
+                        selectedCategoryList = processCategoryList(entry.getTextilesList(), selectedCategory, userId.getId());
+                        break;
+                    case "BATTERY":
+                        selectedCategoryList = processBatteryCategory(entry.getBattery(), userId.getId());
+                        break;
+                    default:
+                        selectedCategoryList = new ArrayList<>();
+                        break;
+                }
+                tvTitle.setText(selectedCategory);
+                CategoryAdapter categoryAdapter = new CategoryAdapter(selectedCategoryList);
                 rvObjets.setLayoutManager(new LinearLayoutManager(context));
                 rvObjets.setAdapter(categoryAdapter);
             } else {
-                tvSheet.setText("Category not found");
+                Toast.makeText(context, "Data not found", Toast.LENGTH_SHORT).show();
             }
         }
-
-            /*
-            if (stats.getCategories().contains("GLASS")) {
-                if (entry != null) {
-                    List<Category> glassItemList = processCategoryList(entry.getGlassList(), userId.getId());
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(glassItemList);
-                    rvObjets.setLayoutManager(new LinearLayoutManager(context));
-                    rvObjets.setAdapter(categoryAdapter);
-                }
-            } else if (stats.getCategories().contains("PAPER")) {
-                if (entry != null) {
-                    List<Category> paperItemList = processCategoryList(entry.getPaperList(), userId.getId());
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(paperItemList);
-                    rvObjets.setLayoutManager(new LinearLayoutManager(context));
-                    rvObjets.setAdapter(categoryAdapter);
-                }
-            } else if (stats.getCategories().contains("ELECTRONIC")) {
-                if (entry != null) {
-                    List<Category> electronicItemList = processCategoryList(entry.getElectronicList(), userId.getId());
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(electronicItemList);
-                    rvObjets.setLayoutManager(new LinearLayoutManager(context));
-                    rvObjets.setAdapter(categoryAdapter);
-                }
-
-            } else if (stats.getCategories().contains("CARDBOARD")) {
-                if (entry != null) {
-                    List<Category> cardboardItemList = processCategoryList(entry.getCardboardList(), userId.getId());
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(cardboardItemList);
-                    rvObjets.setLayoutManager(new LinearLayoutManager(context));
-                    rvObjets.setAdapter(categoryAdapter);
-                }
-            } else if (stats.getCategories().contains("TEXTILES")) {
-                if (entry != null) {
-                    List<Category> textilesItemList = processCategoryList(entry.getTextilesList(), userId.getId());
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(textilesItemList);
-                    rvObjets.setLayoutManager(new LinearLayoutManager(context));
-                    rvObjets.setAdapter(categoryAdapter);
-                }
-            } else if (stats.getCategories().contains("PLASTIC")) {
-                processPlasticCategory(entry.getPlastic(), userId.getId());
-                // Resto del código para configurar el RecyclerView y mostrar la información
-            } else if (stats.getCategories().contains("STEEL")) {
-                processSteelCategory(entry.getSteel(), userId.getId());
-                // Resto del código para configurar el RecyclerView y mostrar la información
-            }else if (stats.getCategories().contains("BATTERY")) {
-                processBatteryCategory(entry.getBattery(), userId.getId());
-                // Resto del código para configurar el RecyclerView y mostrar la información
-            }else {
-                tvSheet.setText("Category 'CATEGORY_NAME' not found");
-            }
-
-             */
-
 
         bottomSheetDialog.show();
     }
@@ -158,12 +139,13 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
         return null;
     }
 
-    private List<Category> processCategoryList(List<Category> categoryList, int userId) {
+    private List<Category> processCategoryList(List<Category> categoryList, String selectedCategory, int userId) {
         List<Category> categoryItemList = new ArrayList<>();
 
         if (categoryList != null) {
             for (Category category : categoryList) {
-                if (category.getUserId() == userId) {
+                if (category.getUserId() == userId && category.getCategoryName().equals(selectedCategory)) {
+                    Log.d("CategoryList", "Adding category: " + category.getCategoryName() + ", Quantity: " + category.getQuantity() + ", Price: " + category.getPrice());
                     Category categoryItem = new Category(category.getId(), category.getUserId(), category.getQuantity(), category.getDate(),
                             category.getPrice(), category.getCategoryName());
                     categoryItemList.add(categoryItem);
@@ -174,44 +156,62 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
         return categoryItemList;
     }
 
-    private void processPlasticCategory(Map<String, List<PlasticItem>> plasticMap, int userId) {
-        for (List<PlasticItem> plasticItemList : plasticMap.values()) {
+    private List<Category> processPlasticCategory(Map<String, List<PlasticItem>> plasticMap, int userId) {
+        List<Category> categoryItemList = new ArrayList<>();
+
+        for (Map.Entry<String, List<PlasticItem>> entry : plasticMap.entrySet()) {
+            String categoryName = entry.getKey();
+            List<PlasticItem> plasticItemList = entry.getValue();
+
             for (PlasticItem plasticItem : plasticItemList) {
                 if (plasticItem.getUserId() == userId) {
-                    String date = plasticItem.getDate();
-                    String quantity = plasticItem.getQuantity();
-                    String price = plasticItem.getPrice();
-
+                    Category categoryItem = new Category(plasticItem.getId(), userId, plasticItem.getQuantity(), plasticItem.getDate(),
+                            plasticItem.getPrice(), categoryName);
+                    categoryItemList.add(categoryItem);
                 }
             }
         }
+
+        return categoryItemList;
     }
 
-    private void processSteelCategory(Map<String, List<SteelItem>> steelMap, int userId) {
-        for (List<SteelItem> steelItemList : steelMap.values()) {
+    private List<Category> processSteelCategory(Map<String, List<SteelItem>> steelcMap, int userId) {
+        List<Category> categoryItemList = new ArrayList<>();
+
+        for (Map.Entry<String, List<SteelItem>> entry : steelcMap.entrySet()) {
+            String categoryName = entry.getKey();
+            List<SteelItem> steelItemList = entry.getValue();
+
             for (SteelItem steelItem : steelItemList) {
                 if (steelItem.getUserId() == userId) {
-                    String date = steelItem.getDate();
-                    String quantity = steelItem.getQuantity();
-                    String price = steelItem.getPrice();
+                    Category categoryItem = new Category(steelItem.getId(), userId, steelItem.getQuantity(), steelItem.getDate(),
+                            steelItem.getPrice(), categoryName);
+                    categoryItemList.add(categoryItem);
                 }
             }
         }
 
+        return categoryItemList;
     }
 
-    private void processBatteryCategory(Map<String, List<BatteryItem>> batteryMap, int userId) {
-        for (List<BatteryItem> batteryItemList : batteryMap.values()) {
+    private List<Category> processBatteryCategory(Map<String, List<BatteryItem>> batteryMap, int userId) {
+        List<Category> categoryItemList = new ArrayList<>();
+
+        for (Map.Entry<String, List<BatteryItem>> entry : batteryMap.entrySet()) {
+            String categoryName = entry.getKey();
+            List<BatteryItem> batteryItemList = entry.getValue();
+
             for (BatteryItem batteryItem : batteryItemList) {
                 if (batteryItem.getUserId() == userId) {
-                    String date = batteryItem.getDate();
-                    String quantity = batteryItem.getQuantity();
-                    String price = batteryItem.getPrice();
+                    Category categoryItem = new Category(batteryItem.getId(), userId, batteryItem.getQuantity(), batteryItem.getDate(),
+                            batteryItem.getPrice(), categoryName);
+                    categoryItemList.add(categoryItem);
                 }
             }
         }
-    }
 
+        return categoryItemList;
+    }
 
     @Override
     public void onBindViewHolder(@NonNull StatsViewHolder holder, int position) {
@@ -228,6 +228,7 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
         private final TextView tvCategory, tvSubTotal, tvPercentTotal, tvValTotal;
         private final ImageView ivIcon;
         private final FrameLayout frameAnimation;
+        private final MaterialButton btnDetails;
 
         public StatsViewHolder(@NonNull View itemView, String maxCategory) {
             super(itemView);
@@ -237,8 +238,24 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
             tvValTotal = itemView.findViewById(R.id.tvValTotal);
             tvPercentTotal = itemView.findViewById(R.id.tvPercentTotal);
             frameAnimation = itemView.findViewById(R.id.frameAnimation);
+            btnDetails = itemView.findViewById(R.id.btnDetails);
 
             frameAnimation.setVisibility(maxCategory.equals(tvCategory.getText().toString()) ? View.VISIBLE : View.GONE);
+
+            btnDetails.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    handleItemClick();
+                }
+            });
+        }
+
+        private void handleItemClick() {
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                Object clickedItem = items.get(position);
+                showDetails(clickedItem);
+            }
         }
 
         public void bindItem(Object item, String maxCategory) {

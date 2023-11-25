@@ -128,8 +128,8 @@ public class SignUpActivity extends AppCompatActivity {
     private void signUp() {
         userData = new UserData(this);
         String userImage = "";
-        String userName = tiUserName.getText().toString();
-        String email = tiEmail.getText().toString();
+        String userName = tiUserName.getText().toString().toLowerCase();
+        String email = tiEmail.getText().toString().toLowerCase();
         String password = tiPassword.getText().toString();
         String confirmPassword = tiConfPassword.getText().toString();
 

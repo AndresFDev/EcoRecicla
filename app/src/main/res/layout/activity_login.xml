@@ -10,16 +10,17 @@
         android:id="@+id/frameAnimation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/llBody"
-        app:layout_constraintTop_toBottomOf="@+id/incTitle">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationView"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="match_parent"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="anm_up.json"
+            app:lottie_fileName="anm_backgrd.json"
             app:lottie_imageAssetsFolder="assets"
+            android:scaleType="centerCrop"
             app:lottie_loop="true"
             app:lottie_speed="1.0" />
 

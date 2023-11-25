@@ -63,10 +63,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleLogin() {
-        String userName = tietEmail.getText().toString().trim();
+        String credential = tietEmail.getText().toString().trim().toLowerCase();
         String password = tietPassword.getText().toString().trim();
 
-        int loginResult = userData.loginUser(userName, password);
+        int loginResult = userData.loginUser(credential, password);
         handleLoginResult(loginResult);
     }
 
@@ -94,25 +94,34 @@ public class LoginActivity extends AppCompatActivity {
     private void handleLoginResult(int loginResult) {
         setupTextWatchers();
         String errorMessage = "";
+        Log.e("Resultado Login", String.valueOf(loginResult));
         switch (loginResult) {
-            case UserData.SUCCESS:
-                boolean rememberSession = cbRememberSession.isChecked();
-                sessionManager.setRememberSession(rememberSession);
-                sessionManager.setLoggedIn(rememberSession);
-                navigateToMainActivity();
+            case UserData.BOTH_FIELDS_EMPTY:
+                errorMessage = "Campos obligatorios vacios";
+                showError(tilEmail, errorMessage);
+                showError(tilPassword, errorMessage);
+                break;
+            case UserData.EMPTY_CREDENTIALS_LOGIN:
+                errorMessage = "Nombre de usuario o correo electrónico vacío";
+                showError(tilEmail, errorMessage);
                 break;
             case UserData.USER_NOT_FOUND:
                 errorMessage = "Usuario o correo electrónico no encontrado";
                 showError(tilEmail, errorMessage);
                 break;
+            case UserData.EMPTY_PASSWORD_LOGIN:
+                errorMessage = "La contraseña está vacía. Porfavor ingresa tu contraseña";
+                showError(tilPassword, errorMessage);
+                break;
             case UserData.INCORRECT_PASSWORD:
                 errorMessage = "Contraseña incorrecta";
                 showError(tilPassword, errorMessage);
                 break;
-            case UserData.BOTH_FIELDS_EMPTY:
-                errorMessage = "Campos obligatorios vacios";
-                showError(tilEmail, errorMessage);
-                showError(tilPassword, errorMessage);
+            case UserData.SUCCESS:
+                boolean rememberSession = cbRememberSession.isChecked();
+                sessionManager.setRememberSession(rememberSession);
+                sessionManager.setLoggedIn(rememberSession);
+                navigateToMainActivity();
                 break;
         }
 

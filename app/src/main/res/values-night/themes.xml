@@ -18,6 +18,8 @@
         <item name="android:statusBarColor">@color/colorDarkBackground</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.App.DatePicker</item>
+        <item name="materialDividerStyle">@style/Widget.App.MaterialDivider</item>
     </style>
 
     <style name="SplashScreenTheme">
@@ -42,7 +44,9 @@
     <style name="NavMenu">
         <item name="backgroundTint">@color/colorDarkPrimary</item>
         <item name="labelVisibilityMode">labeled</item>
-        <item name="layout_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</item>
+        <item name="layout_behavior">
+            com.google.android.material.behavior.HideBottomViewOnScrollBehavior
+        </item>
         <item name="menu">@menu/nav_menu</item>
     </style>
 
@@ -236,7 +240,8 @@
         <item name="colorOnSurface">@color/colorDarkOnPrimary</item>
         <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
         <item name="android:justificationMode">inter_word</item>
-        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text
+        </item>
         <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button</item>
         <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button</item>
     </style>
@@ -257,27 +262,39 @@
         <item name="fontFamily">@font/product_sans_bold</item>
     </style>
 
-    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
-        <item name="colorPrimary">@color/colorDarkPrimaryContainer</item>
-        <item name="colorOnPrimary">@color/colorDarkSecondary</item>
-    </style>
-
-    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
-    </style>
-
     <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
         <item name="backgroundTint">@color/colorDarkPrimaryContainer</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
-    </style>
-
-    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20dp</item>
     </style>
 
     <style name="IconCard">
         <item name="tint">@color/colorDarkOnPrimary</item>
     </style>
 
+    <style name="Widget.App.MaterialDivider" parent="Widget.Material3.MaterialDivider">
+        <item name="dividerColor">@color/colorDarkSecondary</item>
+    </style>
+
+    <style name="TitleItemCategory" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextItemCategory" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/colorDarkSecondary</item>
+        <item name="colorOnPrimary">@color/colorDarkPrimary</item>
+        <item name="colorSurface">@color/colorDarkSecondary</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent
+        </item>
+        <!-- Customize text field of the text input mode. -->
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+    </style>
 </resources>

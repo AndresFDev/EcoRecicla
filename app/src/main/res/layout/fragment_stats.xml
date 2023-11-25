@@ -27,7 +27,7 @@
             android:layout_height="350dp"
             android:layout_gravity="center"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="anm_up.json"
+            app:lottie_fileName="anm_stats.json"
             app:lottie_imageAssetsFolder="assets"
             app:lottie_loop="true"
             app:lottie_speed="1.0" />
@@ -39,7 +39,7 @@
         style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aún no tienes datos ingresados"
+        android:text="Tus estadísticas están vacias"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/frameAnimation" />
 

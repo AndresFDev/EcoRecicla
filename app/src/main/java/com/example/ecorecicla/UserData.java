@@ -118,25 +118,6 @@ public class UserData {
         return SUCCESS;
     }
 
-    // Método para cargar la lista de usuarios desde el archivo JSON
-    /*public List<User> loadUserList() {
-        List<User> userList = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(context.getFileStreamPath(FILENAME)))) {
-            StringBuilder jsonBuilder = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                jsonBuilder.append(line);
-            }
-            Type userListType = new TypeToken<List<User>>() {}.getType();
-            userList = new Gson().fromJson(jsonBuilder.toString(), userListType);
-            Log.d("UserData", "Usuarios cargados correctamente desde userData.json");
-
-        } catch (IOException e) {
-            Log.e("UserData", "Error al cargar usuarios: " + e.getMessage());
-        }
-        return userList;
-    } */
-
     public List<User> loadUserList() {
         List<User> userList = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(context.getFileStreamPath(FILENAME)))) {
@@ -148,19 +129,6 @@ public class UserData {
         }
         return userList;
     }
-
-
-    // Método para guardar la lista de usuarios en el archivo JSON
-    /*private void saveUserList(List<User> userList) {
-        try (FileOutputStream outputStream = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
-             OutputStreamWriter writer = new OutputStreamWriter(outputStream)) {
-            String userListJson = new Gson().toJson(userList);
-            writer.write(userListJson);
-            Log.d("UserData", "Usuarios guardados correctamente en userData.json");
-        } catch (IOException e) {
-            Log.e("UserData", "Error al guardar usuarios: " + e.getMessage());
-        }
-    } */
 
     private void saveUserList(List<User> userList) {
         try (FileOutputStream outputStream = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
@@ -203,6 +171,14 @@ public class UserData {
         List<User> userList = loadUserList();
 
         for (User user : userList) {
+            if (!isCredentialMatched(user, credential)) {
+                return USER_NOT_FOUND;
+            }
+
+            if (!user.getPassword().equals(password)) {
+                return INCORRECT_PASSWORD;
+            }
+
             if (isCredentialMatched(user, credential) && user.getPassword().equals(password)) {
                 return SUCCESS;
             }

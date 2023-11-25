@@ -6,22 +6,278 @@
     </style>
 
     <style name="Theme.EcoRecicla" parent="Base.Theme.EcoRecicla">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
-        <item name="colorSecondary">@color/colorSecondary</item>
-        <item name="colorOnSecondary">@color/colorOnSecondary</item>
-        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorPrimary">@color/colorDarkPrimary</item>
+        <item name="colorOnPrimary">@color/colorDarkOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorDarkPrimaryContainer</item>
+        <item name="colorSecondary">@color/colorDarkSecondary</item>
+        <item name="colorOnSecondary">@color/colorDarkOnSecondary</item>
+        <item name="colorSecondaryContainer">@color/colorDarkSecondaryContainer</item>
         <item name="colorOnBackground">@color/colorPrimaryDark</item>
         <item name="colorOutline">@color/white</item>
-        <item name="android:colorBackground">#000000</item>
+        <item name="android:colorBackground">@color/colorDarkBackground</item>
+        <item name="android:statusBarColor">@color/colorDarkBackground</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+    </style>
+
+    <style name="SplashScreenTheme">
+        <item name="android:background">@color/colorDarkBackground</item>
+    </style>
+
+    <style name="AppLogoTheme">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="AppLogoIconTheme">
+        <item name="tint">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="CardCustomTheme">
+        <item name="android:backgroundTint">@color/colorDarkPrimaryContainer</item>
+        <item name="android:background">@color/colorDarkPrimaryContainer</item>
+    </style>
+
+    <style name="NavMenu">
+        <item name="backgroundTint">@color/colorDarkPrimary</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="layout_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</item>
+        <item name="menu">@menu/nav_menu</item>
+    </style>
+
+    <style name="MenuItemStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="iconGravity">top</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconTint">@color/colorDarkSecondary</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+    </style>
+
+    <style name="TextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAlignment">center</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textAppearance">@font/product_sans_bold</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextBodyStyle">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAppearance">@font/product_sans_regular</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SecondaryButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="textAllCaps">true</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+        <item name="backgroundTint">@color/colorTransparent</item>
+        <item name="strokeColor">@color/colorDarkSecondary</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="ShimmerStyle">
+        <item name="android:background">@color/colorDarkPrimary</item>
+    </style>
+
+    <style name="CardButtonBack" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/colorDarkBackground</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="ButtonBack" parent="Widget.Material3.Button.IconButton.Outlined">
+        <item name="icon">@drawable/ic_back</item>
+        <item name="iconTint">@color/colorDarkSecondary</item>
+        <item name="iconSize">32dp</item>
+        <item name="iconGravity">start</item>
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="CardContainerImageTheme">
+        <item name="cardBackgroundColor">@color/colorTransparent</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="strokeColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="CardImageTheme">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="cardBackgroundColor">@color/colorDarkPrimary</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="SecondaryCardTheme">
+        <item name="android:backgroundTint">@color/colorDarkPrimary</item>
+    </style>
+
+    <style name="TextItalic">
+        <item name="fontFamily">@font/product_sans_italic_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="ImageIconTheme">
+        <item name="tint">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="CheckBoxTheme" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="buttonTint">@color/colorDarkSecondary</item>
+    </style>
+
+    <style name="SwitchTheme" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="colorPrimary">@color/colorDarkSecondary</item>
+        <item name="colorSurfaceVariant">@color/colorDarkPrimaryContainer</item>
     </style>
 
     <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="hintTextColor">@color/colorOnSecondary</item>
-        <item name="android:textColorHint">@color/colorOnSecondary</item>
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+        <item name="hintTextColor">@color/colorDarkOnPrimary</item>
+        <item name="android:textColorHint">@color/colorDarkOnPrimary</item>
+        <item name="endIconTint">@color/colorDarkSecondary</item>
+        <item name="android:layout_marginBottom">12dp</item>
     </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">@color/colorDarkOnPrimary</item>
+        <item name="colorOnSurface">@color/colorDarkSecondary</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
+        <item name="editTextStyle">@style/Widget.Material3.TextInputEditText.OutlinedBox</item>
+    </style>
+
+    <style name="TitleStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="android:paddingVertical">16dp</item>
+    </style>
+
+    <style name="TextStatsStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="TitleStatsStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="BodyStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="TitleCardTipsStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginVertical">4dp</item>
+    </style>
+
+    <style name="TextCardStatsStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="indicatorColor">@color/colorDarkPrimaryContainer</item>
+        <item name="trackColor">@color/colorDarkSecondary</item>
+        <item name="trackCornerRadius">5dp</item>
+        <item name="trackThickness">12dp</item>
+    </style>
+
+    <style name="CardViewStyle" parent="Base.Widget.Material3.CardView">
+        <item name="cardCornerRadius">@dimen/cornerLarge</item>
+        <item name="cardBackgroundColor">@color/colorDarkPrimaryContainer</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/colorDarkPrimary</item>
+        <item name="colorSecondary">@color/colorDarkSecondary</item>
+        <item name="colorSurface">@color/colorDarkPrimaryContainer</item>
+        <item name="colorOnSurface">@color/colorDarkOnPrimary</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="android:justificationMode">inter_word</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="backgroundTint">@color/colorDarkPrimary</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/colorDarkPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/colorDarkSecondary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
+    </style>
+
+    <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/colorDarkPrimaryContainer</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="IconCard">
+        <item name="tint">@color/colorDarkOnPrimary</item>
+    </style>
+
 </resources>

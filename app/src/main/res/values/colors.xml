@@ -3,13 +3,26 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#284907</color>
+    <color name="colorPrimary25">#40284907</color>
+    <color name="colorPrimary50">#80284907</color>
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorPrimaryContainer">#BBD897</color>
     <color name="colorSecondary">#9FC96C</color>
     <color name="colorOnSecondary">#36550F</color>
     <color name="colorSecondaryContainer">#C8E6C9</color>
     <color name="colorBackground">#DCEDC8</color>
+    <color name="colorBackground50">#80DCEDC8</color>
     <color name="colorPrimaryDark">#0D4A07</color>
     <color name="colorError">#FF0000</color>
     <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorDarkPrimary">#12302A</color>
+    <color name="colorDarkOnPrimary">#FFFFFF</color>
+    <color name="colorDarkPrimaryContainer">#054A3D</color>
+    <color name="colorDarkSecondary">#A9AA5D</color>
+    <color name="colorDarkOnSecondary">#0D1E1B</color>
+    <color name="colorDarkSecondaryContainer">#054A3D</color>
+    <color name="colorDarkBackground">#0D1E1B</color>
+    <color name="colorDarkBackground50">#800D1E1B</color>
+
+
 </resources>

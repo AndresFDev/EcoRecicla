@@ -1,0 +1,460 @@
+{
+  "tips": [
+    {
+      "id": 1,
+      "title": "Plástico",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_plastic.png?alt=media&token=0e0d2d88-84cc-4495-a555-a352dcedf3bb",
+      "messages": [
+        {
+          "messageTitle": "Botellas Reutilizables",
+          "messageBody": "Reduce el uso de plástico desechable llevando tu propia botella de agua reutilizable. Al hacerlo, no solo reducirás la cantidad de plástico de un solo uso, sino que también ahorrarás dinero a lo largo del tiempo y contribuirás a la conservación del medio ambiente.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_1.jpg?alt=media&token=f4561e3a-e19e-4865-a0d7-8b6fd90d8711"
+        },
+        {
+          "messageTitle": "Reciclaje de Plástico",
+          "messageBody": "Recicla tus envases de plástico vacíos y sé consciente de los códigos de reciclaje en ellos. Clasificar los plásticos adecuadamente garantiza un proceso de reciclaje más eficiente y una menor contaminación ambiental.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_2.jpg?alt=media&token=2cb49339-0231-436a-a100-0e117c5e725d"
+        },
+        {
+          "messageTitle": "Envases Reciclables",
+          "messageBody": "Opta por productos con envases de plástico reciclable y apoya a las empresas ecológicas. Al elegir productos con envases reciclables, estás fomentando prácticas sostenibles y ayudando a reducir la acumulación de desechos plásticos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_3.jpg?alt=media&token=bfb5e8b0-852c-4ccd-b726-3e4fe2ec8b1b"
+        },
+        {
+          "messageTitle": "Reutiliza Bolsas",
+          "messageBody": "Reutiliza bolsas de plástico o invierte en bolsas reutilizables para tus compras. Esta simple elección puede disminuir la cantidad de bolsas de plástico que terminan en vertederos o en el océano, protegiendo la vida marina y el entorno terrestre.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_4.jpg?alt=media&token=8f932a34-f1ea-4adf-b2d4-6b4c8587e9cd"
+        },
+        {
+          "messageTitle": "Adiós a los Popotes",
+          "messageBody": "Evita los popotes o sorbetes de plástico y opta por alternativas reutilizables. Al hacerlo, contribuyes a la reducción de la contaminación plástica en los océanos y a la preservación de la vida marina.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_5.jpg?alt=media&token=caa9b917-5cf8-4bcb-ab2d-6898cd266d59"
+        },
+        {
+          "messageTitle": "Reciclar Correctamente",
+          "messageBody": "Aprende a reciclar correctamente y a enjuagar los envases de plástico antes de reciclarlos. Un enjuague adecuado ayuda a evitar la contaminación de otros materiales reciclables y garantiza un proceso de reciclaje más eficaz.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_6.jpg?alt=media&token=a5fb6e7b-60ea-4ac8-aab9-8dc5e42f8b68"
+        },
+        {
+          "messageTitle": "Botellas como Macetas",
+          "messageBody": "Convierte botellas de plástico en macetas para plantas o en contenedores para organizar. Esta práctica creativa te permite reutilizar plástico de una manera funcional y decorativa, al tiempo que reduces la cantidad de plástico en vertederos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_7.jpg?alt=media&token=989b4708-2956-4027-857c-74bc44c0f7b7"
+        },
+        {
+          "messageTitle": "Evita Microplásticos",
+          "messageBody": "Evita productos de belleza con microplásticos que dañan el medio ambiente. Estos diminutos fragmentos de plástico pueden ingresar a los océanos y afectar a la vida marina. Opta por productos más sostenibles y amigables con la Tierra.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_8.jpg?alt=media&token=d86bcfd5-2743-4443-bcbd-09c397482b77"
+        },
+        {
+          "messageTitle": "Apoyo al Reciclaje",
+          "messageBody": "Apoya iniciativas de reciclaje de plástico y fomenta el reciclaje en tu comunidad. La promoción activa del reciclaje y la participación en programas de reciclaje locales son pasos importantes para crear un impacto positivo en el medio ambiente.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_9.jpg?alt=media&token=d90aaca5-3504-4c2b-a7c6-e3081fbf5022"
+        },
+        {
+          "messageTitle": "Utensilios Sostenibles",
+          "messageBody": "Reduce el uso de utensilios de plástico y opta por opciones de metal, vidrio o madera. Estos utensilios sostenibles son duraderos y pueden ayudarte a reducir la generación de residuos plásticos en tu vida diaria.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_plastic_10.jpg?alt=media&token=56059892-2216-45d4-9f58-bb6292360a4a"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Papel",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_paper.png?alt=media&token=a6c41fd8-29b4-415f-9baa-5024a3c349b1",
+      "messages": [
+        {
+          "messageTitle": "Recicla papel",
+          "messageBody": "Recicla todo tipo de papel, como periódicos, revistas, cartón y papel de oficina. Recuerda separar los diferentes tipos de papel para un reciclaje más efectivo.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_1.jpg?alt=media&token=c00eee93-b726-4b29-b2fe-f5869472fc80"
+        },
+        {
+          "messageTitle": "Usa papel sostenible",
+          "messageBody": "Usa papel reciclado y productos de papel sostenibles para reducir tu impacto ambiental. Busca productos con certificaciones ecológicas.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_2.jpg?alt=media&token=c0caf35b-419c-4754-a920-aa1bca5b7bbe"
+        },
+        {
+          "messageTitle": "Reutiliza papel impreso",
+          "messageBody": "Reutiliza papel impreso en una cara como papel para notas o garabatos. Esto reduce la cantidad de papel que utilizas y evita el desperdicio.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_3.jpg?alt=media&token=712a7752-c1cd-466a-8224-0c341407bf23"
+        },
+        {
+          "messageTitle": "Reduce el embalaje",
+          "messageBody": "Compra productos con menos embalaje de papel o cartón. Elige opciones con envases reutilizables o reciclables para reducir residuos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_4.jpg?alt=media&token=a40bf2f4-0350-4acf-93c9-c58e91733c46"
+        },
+        {
+          "messageTitle": "Usa papel reciclado",
+          "messageBody": "Utiliza papel reciclado en lugar de toallas de papel en la cocina y el baño. Esto ayuda a conservar los recursos naturales y reducir la deforestación.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_5.jpg?alt=media&token=b4b90c30-b61e-408f-99c0-05f984258b76"
+        },
+        {
+          "messageTitle": "Crea tu propio papel",
+          "messageBody": "Crea tu propio papel reciclado como proyecto de manualidades. Reutiliza papel viejo y dale una segunda vida de forma creativa.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_6.jpg?alt=media&token=cad00826-4021-4f7a-9300-3db939c57932"
+        },
+        {
+          "messageTitle": "Usa documentos digitales",
+          "messageBody": "Opta por libros electrónicos y documentos digitales en lugar de impresiones en papel. Reduce la demanda de papel y ahorra recursos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_7.jpg?alt=media&token=5a4bc350-37b9-492a-8c5f-b4274188bfaa"
+        },
+        {
+          "messageTitle": "Recicla tarjetas y envolturas",
+          "messageBody": "Recicla tarjetas de felicitación y envuelve regalos en papel reciclado o reutilizable. Reduce el desperdicio de papel durante las festividades.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_8.jpg?alt=media&token=50d79918-363a-45ad-97c8-59e4e3bcdc27"
+        },
+        {
+          "messageTitle": "Cuida tus libros y cuadernos",
+          "messageBody": "Cuida tus libros y cuadernos para que duren más tiempo y se puedan reutilizar. Evita marcarlos y mantén un buen estado de conservación.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_9.jpg?alt=media&token=b1402fef-d2aa-47ed-bf71-80aeb97cd425"
+        },
+        {
+          "messageTitle": "Colabora con el reciclaje",
+          "messageBody": "Colabora con programas de reciclaje de papel en tu área y apoya la reforestación. Contribuye al cuidado del medio ambiente y la reutilización de recursos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_paper_10.jpg?alt=media&token=63e106e2-201b-4eab-a7d0-c2b578bad4ff"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Electrónicos",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_electronics.png?alt=media&token=bb47c438-3ed4-4258-a604-35e6b310869f",
+      "messages": [
+        {
+          "messageTitle": "Recicla tus dispositivos",
+          "messageBody": "Recicla tus dispositivos electrónicos antiguos en centros de reciclaje o eventos de recolección. Esto ayuda a reducir la contaminación y a aprovechar los materiales reciclables en los dispositivos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_1.jpg?alt=media&token=5dfedbd3-fa9d-44de-9174-4a9f6def047e"
+        },
+        {
+          "messageTitle": "Evita la basura",
+          "messageBody": "No tires electrónicos en la basura; contienen materiales peligrosos. Busca lugares de reciclaje adecuados para desecharlos de manera responsable y segura.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_2.jpg?alt=media&token=29e1285e-6542-4da7-9f46-5d21b1bc38f6"
+        },
+        {
+          "messageTitle": "Mantén tus dispositivos",
+          "messageBody": "Extiende la vida útil de tus dispositivos mediante el mantenimiento y las actualizaciones. Esto te ayuda a ahorrar dinero y a reducir la generación de residuos electrónicos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_3.jpg?alt=media&token=cf937d94-b65f-4a44-a4dc-ebdce7420548"
+        },
+        {
+          "messageTitle": "Dona o vende",
+          "messageBody": "Dona o vende tus electrónicos usados en lugar de desecharlos. Esto puede beneficiar a otras personas y dar una segunda vida a tus dispositivos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_4.jpg?alt=media&token=332a37c7-090e-4455-9f74-bfef6a60a5ef"
+        },
+        {
+          "messageTitle": "Busca programas",
+          "messageBody": "Busca programas de reciclaje de electrónicos locales o nacionales. Muchas comunidades ofrecen opciones de reciclaje convenientes para tus dispositivos antiguos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_5.jpg?alt=media&token=6dc67e15-b120-4c15-8210-c511b1d4d831"
+        },
+        {
+          "messageTitle": "Ahorra energía",
+          "messageBody": "Desconecta cargadores y dispositivos electrónicos cuando no los uses para ahorrar energía. Esto reduce tu huella de carbono y tu factura de energía.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_6.jpg?alt=media&token=09fd6fcd-6ae8-421b-86cc-2c9fb838477c"
+        },
+        {
+          "messageTitle": "Repara en lugar de reemplazar",
+          "messageBody": "Aprende a reparar pequeños problemas en tus dispositivos electrónicos en lugar de reemplazarlos. Esto puede ser económico y amigable con el medio ambiente.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_7.jpg?alt=media&token=b2a8b01f-4ea2-491a-a0cf-d9a5daeb0dd9"
+        },
+        {
+          "messageTitle": "Eficiencia energética",
+          "messageBody": "Compra dispositivos electrónicos con certificación de eficiencia energética. Estos dispositivos consumen menos energía y ayudan a reducir tu impacto ambiental.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_8.jpg?alt=media&token=763069fe-e55f-42b2-a1e3-aeafc2582729"
+        },
+        {
+          "messageTitle": "Recicla baterías",
+          "messageBody": "Recicla baterías de dispositivos correctamente en puntos de recolección designados. Las baterías contienen sustancias peligrosas y deben ser recicladas adecuadamente.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronic_9.jpg?alt=media&token=b6db3f65-9fd0-4f6e-b237-b7839227280d"
+        },
+        {
+          "messageTitle": "Recicla componentes",
+          "messageBody": "Investiga sobre formas de reciclar y reutilizar componentes electrónicos y cables. Esto puede ayudar a reducir los desechos electrónicos y preservar los recursos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_electronics_10.jpg?alt=media&token=0a946eb4-e026-4e57-a0ff-8529249bc13c"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Vidrio",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_glass.png?alt=media&token=f01c766c-2b9c-45d0-8a4e-ac7b50ac73fb",
+      "messages": [
+        {
+          "messageTitle": "Recicla vidrio",
+          "messageBody": "Recicla botellas y frascos de vidrio en contenedores de reciclaje de vidrio. El vidrio es un material que se puede reciclar infinitamente sin perder calidad. Al reciclarlo, ahorras recursos y energía.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_1.jpg?alt=media&token=b938e858-29a0-4444-9995-fba427230b78"
+        },
+        {
+          "messageTitle": "Enjuaga envases",
+          "messageBody": "Enjuaga los envases de vidrio antes de reciclarlos para eliminar residuos. Esto facilita el proceso de reciclaje y garantiza que los materiales reciclados estén limpios y listos para su reutilización.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_2.jpg?alt=media&token=6e1032b8-1448-4663-a1c0-96d974facc6f"
+        },
+        {
+          "messageTitle": "Reutiliza frascos",
+          "messageBody": "Reutiliza frascos de vidrio para almacenar alimentos o crear decoración casera. Los frascos de vidrio son versátiles y se pueden utilizar de muchas formas creativas en tu hogar.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_3.jpg?alt=media&token=72e7d6b3-cb99-4015-9999-88d6aae660ae"
+        },
+        {
+          "messageTitle": "Apoya reutilización",
+          "messageBody": "Apoya la reutilización de botellas de vidrio, como las botellas de leche retornables. Al elegir productos en envases reutilizables, reduces la necesidad de fabricar nuevos envases y minimizas el desperdicio.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_4.jpg?alt=media&token=6f5f9890-5910-4f93-a7ed-de146847519e"
+        },
+        {
+          "messageTitle": "Maneja vidrio roto",
+          "messageBody": "Evita desechar vidrio roto en contenedores de reciclaje; colócalo en contenedores de basura seguro. El vidrio roto puede representar un peligro, así que asegúrate de desecharlo de manera segura para evitar lesiones.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_5.jpg?alt=media&token=b78e21fb-677b-4905-b324-68b9f62213f0"
+        },
+        {
+          "messageTitle": "Compra en vidrio",
+          "messageBody": "Compra productos en envases de vidrio en lugar de plástico cuando sea posible. Los envases de vidrio son reciclables y más amigables con el medio ambiente que los envases de plástico de un solo uso.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_6.jpg?alt=media&token=f4b537d9-94ac-48ac-b510-18155fa7a477"
+        },
+        {
+          "messageTitle": "Recicla por colores",
+          "messageBody": "Recicla vidrio transparente y de colores por separado si es requerido en tu área. Al reciclar vidrio por colores, se simplifica el proceso de reciclaje y se obtienen materiales de vidrio de alta calidad.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_7.jpg?alt=media&token=f86a2bf6-b28e-496d-b9c7-5cdfaebfc542"
+        },
+        {
+          "messageTitle": "Reutiliza vasos",
+          "messageBody": "Fomenta la reutilización de vasos y tazas de vidrio en lugar de los desechables. Los vasos y tazas de vidrio son duraderos y se pueden usar una y otra vez, reduciendo la cantidad de desechos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_8.jpg?alt=media&token=7e43548c-6cc8-44dc-b073-09e71898290e"
+        },
+        {
+          "messageTitle": "Crea decoración",
+          "messageBody": "Convierte botellas de vidrio en lámparas o elementos decorativos. Las botellas de vidrio vacías se pueden transformar en hermosos elementos decorativos para tu hogar, lo que les da una segunda vida.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_9.jpg?alt=media&token=68354f7f-d62d-4133-b31b-4d6e58a40eef"
+        },
+        {
+          "messageTitle": "Apoya reciclaje",
+          "messageBody": "Apoya a empresas que utilizan vidrio reciclado en sus productos. Al respaldar a empresas comprometidas con el reciclaje de vidrio, contribuyes a cerrar el ciclo de reciclaje y a promover prácticas sostenibles.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_glass_10.jpg?alt=media&token=af9e4a96-570b-48a6-809d-4b5842f6e807"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Cartón",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_cardboard.png?alt=media&token=12dbd2b8-853e-40b8-a0b5-369a42dc6aca",
+      "messages": [
+        {
+          "messageTitle": "Recicla cajas",
+          "messageBody": "Recicla cajas de cartón, como las de envíos y embalajes, en centros de reciclaje. El cartón es un material fácil de reciclar y puede tener una segunda vida útil.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_1.jpg?alt=media&token=08a4b459-59a5-4985-af06-319e3f083dfc"
+        },
+        {
+          "messageTitle": "Reutiliza cajas",
+          "messageBody": "Reutiliza cajas de cartón para almacenamiento o envío de paquetes. Puedes darles una segunda vida antes de reciclarlas.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_2.jpg?alt=media&token=98bfde14-a567-4862-b3c9-b3985c84ed5f"
+        },
+        {
+          "messageTitle": "Corta cartón",
+          "messageBody": "Corta cajas de cartón en pedazos pequeños antes de reciclarlas para ahorrar espacio. Esto facilita su manejo y transporte.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_3.jpg?alt=media&token=838e6813-6769-46d8-a231-ffa2796bff31"
+        },
+        {
+          "messageTitle": "Evita cartón contaminado",
+          "messageBody": "Evita desechar cartón contaminado con aceite o alimentos en contenedores de reciclaje. El cartón limpio es más fácil de reciclar.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_4.jpg?alt=media&token=6c0f6301-3e40-4cc2-9015-13286e8b25d1"
+        },
+        {
+          "messageTitle": "Compra en cartón",
+          "messageBody": "Compra productos con envases de cartón reciclable y apoya la sostenibilidad. Contribuir a la demanda de cartón reciclado fomenta el reciclaje.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_5.jpg?alt=media&token=d66b0bc0-10fb-43ba-903c-4a9379cf80e4"
+        },
+        {
+          "messageTitle": "Recicla cartón de alimentos",
+          "messageBody": "Recicla cartón de envases de alimentos limpios, como cajas de cereales. Esto reduce la cantidad de residuos enviados a vertederos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_6.jpg?alt=media&token=1f6c1fd7-fa0c-4bf8-b980-ea56f86b4cc7"
+        },
+        {
+          "messageTitle": "Crea con cartón",
+          "messageBody": "Convierte cajas de cartón en juguetes o proyectos de manualidades. Dale una segunda vida creativa al cartón.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_7.jpg?alt=media&token=ef41c718-8106-4889-8a7c-2e8a22a9f5e5"
+        },
+        {
+          "messageTitle": "Apoya reciclaje local",
+          "messageBody": "Apoya programas de reciclaje de cartón en tu comunidad. Participar en iniciativas locales fortalece el reciclaje.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_8.jpg?alt=media&token=4a5880f6-f3ea-4cf2-979a-254c07a891d1"
+        },
+        {
+          "messageTitle": "Sustituye plástico",
+          "messageBody": "Reemplaza envases de plástico con envases de cartón siempre que sea posible. El cartón es más fácil de reciclar y es una opción más sostenible.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_9.jpg?alt=media&token=9b80701c-2605-47a0-9889-8377695be57a"
+        },
+        {
+          "messageTitle": "Colabora con cartón",
+          "messageBody": "Colabora en la reutilización de cartón en programas de construcción y arte. El cartón reciclado puede ser una fuente de materiales creativos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_box_10.jpg?alt=media&token=8e6625d8-c142-4cbb-a39a-1c82e0e63d5e"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Metal",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_steel.png?alt=media&token=6f887feb-f6cf-4e33-a0d9-bf5d613efb98",
+      "messages": [
+        {
+          "messageTitle": "Recicla latas de aluminio",
+          "messageBody": "Recicla latas de aluminio y envases de metal en contenedores de reciclaje. El aluminio es altamente reciclable y su reciclaje ahorra recursos y energía.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_1.jpg?alt=media&token=e67432ef-0fd7-4160-bbac-7a789255dc59"
+        },
+        {
+          "messageTitle": "Aplasta latas",
+          "messageBody": "Aplasta latas antes de reciclarlas para ahorrar espacio en tu contenedor. Esto facilita el transporte y procesamiento en plantas de reciclaje.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_2.jpg?alt=media&token=440c1440-257c-4e54-aeb5-c7328a57a5e1"
+        },
+        {
+          "messageTitle": "Recicla objetos metálicos",
+          "messageBody": "Recicla objetos de metal viejos, como herramientas o electrodomésticos. Contribuye al ciclo de vida sostenible de los metales.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_3.jpg?alt=media&token=9790aae6-7e50-4d68-910f-658f3254d220"
+        },
+        {
+          "messageTitle": "Reutiliza objetos metálicos",
+          "messageBody": "Reutiliza objetos de metal para crear obras de arte o muebles. Dale una segunda vida a estos materiales y reduce residuos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_4.jpg?alt=media&token=663b402e-c8dc-4cab-a1cd-3546af80b933"
+        },
+        {
+          "messageTitle": "Evita desechar metal",
+          "messageBody": "Evita desechar objetos de metal en la basura; pueden ser reciclados y reutilizados. Contribuye a la conservación de recursos naturales.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_5.jpg?alt=media&token=ffef24e1-bf35-46cd-bc0e-cc59fafc0e12"
+        },
+        {
+          "messageTitle": "Compra productos en metal",
+          "messageBody": "Compra productos con envases de metal reciclable y apoya la sostenibilidad. Fomenta el uso de materiales reciclados en la fabricación de productos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_6.jpg?alt=media&token=e793ffb4-f6cb-48eb-8dd9-ee75af1c5256"
+        },
+        {
+          "messageTitle": "Recicla envases de aerosol",
+          "messageBody": "Recicla envases de aerosol vacíos en puntos de recolección designados. Estos envases son reciclables y pueden contener residuos peligrosos si se desechan incorrectamente.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_7.jpg?alt=media&token=04dad57b-cbb9-4611-a5f4-fd4c59dd8798"
+        },
+        {
+          "messageTitle": "Crea con metal",
+          "messageBody": "Convierte objetos de metal en elementos decorativos o funcionales. ¡Deja volar tu creatividad y reutiliza metal de forma artística!",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_8.jpg?alt=media&token=57658b1c-b0d2-4b8e-8687-54bcf4fe4e8b"
+        },
+        {
+          "messageTitle": "Apoya reciclaje local",
+          "messageBody": "Participa en programas de reciclaje de metal en tu área. Contribuye a mantener una comunidad más sostenible y colabora en el reciclaje local.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_9.jpg?alt=media&token=b0abbd8e-a030-475a-9ea1-c5e677100c80"
+        },
+        {
+          "messageTitle": "Apoya fabricación sostenible",
+          "messageBody": "Apoya la fabricación sostenible de productos de metal. Contribuye a un futuro más ecológico y respalda a empresas comprometidas con la sostenibilidad.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_steel_10.jpg?alt=media&token=98e6c304-1b3a-46f0-a64e-d8567b7eb5b8"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Textiles",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_textil.png?alt=media&token=7c07ebd1-264f-469b-957e-5923cdb5f63a",
+      "messages": [
+        {
+          "messageTitle": "Recicla Ropa",
+          "messageBody": "Recicla ropa y textiles en contenedores de donación o tiendas de segunda mano. Al reciclar ropa, ayudas a reducir la cantidad de textiles en vertederos y contribuyes a la sostenibilidad del planeta.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_1.jpg?alt=media&token=63eec654-3b57-45c2-b002-6277193248f5"
+        },
+        {
+          "messageTitle": "Reutiliza Textiles",
+          "messageBody": "Reutiliza ropa y textiles creando nuevos estilos o proyectos de costura. Al dar una segunda vida a tus prendas, reduces el desperdicio y fomentas la creatividad.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_2.jpg?alt=media&token=3e169e78-9423-4764-a52f-f0955936ffd8"
+        },
+        {
+          "messageTitle": "Dona Ropa",
+          "messageBody": "Dona ropa que ya no necesitas en lugar de desecharla en la basura. Tu donación puede beneficiar a quienes más lo necesitan y extender la vida útil de las prendas.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_3.jpg?alt=media&token=235b3f03-715a-4eb1-beb9-ecfd2ce66d7e"
+        },
+        {
+          "messageTitle": "Apoya Reciclaje Textil",
+          "messageBody": "Apoya programas de reciclaje de textiles y ropa en tu comunidad. Estas iniciativas contribuyen a un ciclo más sostenible para la moda y la indumentaria.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_4.jpg?alt=media&token=5acdce05-8171-4768-8609-836b48b15d56"
+        },
+        {
+          "messageTitle": "Compra Segunda Mano",
+          "messageBody": "Compra ropa de segunda mano para reducir la demanda de producción. Al elegir prendas usadas, reduces el impacto ambiental de la moda.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_5.jpg?alt=media&token=71ebafdf-3af2-463d-b0c2-852fe11df6ea"
+        },
+        {
+          "messageTitle": "Reutiliza Textiles",
+          "messageBody": "Convierte textiles en trapos de limpieza o bolsas reutilizables. Puedes dar nuevas utilidades a telas que de otro modo se desecharían.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_6.jpg?alt=media&token=72a5a635-20ca-4c21-9a36-b43eee945eb7"
+        },
+        {
+          "messageTitle": "Evita Desechar Ropa",
+          "messageBody": "Evita desechar ropa en contenedores de reciclaje de papel o plástico. La ropa no pertenece a estos contenedores y puede interferir con el proceso de reciclaje.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_7.jpg?alt=media&token=6d9d8132-e65c-499a-b4f5-1a0b4c5c4fd2"
+        },
+        {
+          "messageTitle": "Reutiliza Textiles en Arte",
+          "messageBody": "Investiga sobre la reutilización de textiles en proyectos de arte y artesanía. Los textiles pueden ser materiales versátiles y creativos en el mundo del arte.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_8.jpg?alt=media&token=335086aa-7bb7-4d56-816b-488c2bc327b8"
+        },
+        {
+          "messageTitle": "Recicla Textiles Viejos",
+          "messageBody": "Recicla textiles viejos y dañados en instalaciones de reciclaje de tela. Esto garantiza que incluso las prendas más desgastadas tengan una oportunidad de reciclaje.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_9.jpg?alt=media&token=1d71429e-5131-460f-914d-0ae57a938a59"
+        },
+        {
+          "messageTitle": "Promueve la Reutilización",
+          "messageBody": "Promueve la reutilización y donación de ropa en tu área. Anima a otros a seguir prácticas sostenibles en la moda.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_textil_10.jpg?alt=media&token=e69e2e36-ac5e-41f8-bbad-35596cfe0bcb"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Baterías",
+      "stikerImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/stk_battery.png?alt=media&token=dd681d33-cfae-44b0-ba5e-04068a1bd878",
+      "messages": [
+        {
+          "messageTitle": "Recicla Baterías",
+          "messageBody": "Recicla baterías agotadas en puntos de recolección de baterías. El reciclaje adecuado de baterías ayuda a reducir la contaminación y conservar recursos.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_1.jpg?alt=media&token=622aee5d-f009-4885-ae03-b056d9460246"
+        },
+        {
+          "messageTitle": "Evita Desechar Baterías",
+          "messageBody": "Evita desechar baterías en la basura; contienen materiales tóxicos que pueden dañar el medio ambiente. Busca puntos de recogida de baterías para su disposición segura.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_2.jpg?alt=media&token=26c27519-2d42-42a6-9c7b-aa5fe17953ba"
+        },
+        {
+          "messageTitle": "Usa Baterías Recargables",
+          "messageBody": "Utiliza baterías recargables en lugar de baterías desechables. Las baterías recargables son más sostenibles y pueden ser recargadas y reutilizadas muchas veces.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_3.jpg?alt=media&token=ed796c02-a1f6-46f3-a42c-15e3064f8c3c"
+        },
+        {
+          "messageTitle": "Recicla Baterías de Dispositivos",
+          "messageBody": "Recicla baterías de teléfonos móviles y dispositivos electrónicos. Estos dispositivos contienen baterías que pueden ser recicladas de manera segura.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_4.jpg?alt=media&token=ac2c6e85-fc2f-41aa-a7a7-d017ebbd6e09"
+        },
+        {
+          "messageTitle": "Participa en Reciclaje Local",
+          "messageBody": "Participa en programas de reciclaje de baterías en tiendas o instalaciones locales. Asegúrate de conocer los lugares donde puedes dejar tus baterías usadas para su reciclaje adecuado.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_5.jpg?alt=media&token=15626059-1a6e-463c-a40a-9ae3ce8e6a60"
+        },
+        {
+          "messageTitle": "Almacena Baterías Usadas",
+          "messageBody": "Almacena las baterías usadas en un lugar seguro antes de reciclarlas. Puedes utilizar recipientes herméticos para su almacenamiento temporal.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_6.jpg?alt=media&token=d7504353-2752-44b5-9974-8f980406de1e"
+        },
+        {
+          "messageTitle": "Recicla Baterías de Automóviles",
+          "messageBody": "Asegúrate de que las baterías de automóviles sean recicladas de manera adecuada. Las baterías de automóviles contienen ácido y plomo, por lo que su reciclaje es especialmente importante.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_7.jpg?alt=media&token=5b92cb39-d435-493d-b38b-9bcf17383c1a"
+        },
+        {
+          "messageTitle": "Colabora en Reciclaje Local",
+          "messageBody": "Colabora en programas de reciclaje de baterías en tu comunidad. Puedes unirte a esfuerzos locales para promover el reciclaje responsable de baterías.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_8.jpg?alt=media&token=69eb646f-75ed-4f50-8eda-9a8e9b50935a"
+        },
+        {
+          "messageTitle": "Investiga Reciclaje de Baterías",
+          "messageBody": "Investiga sobre el reciclaje de baterías portátiles y de vehículos eléctricos. A medida que evoluciona la tecnología, el reciclaje de baterías se vuelve aún más crucial.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_9.jpg?alt=media&token=4189ce92-60db-4af9-9d7d-4e102f7dcb25"
+        },
+        {
+          "messageTitle": "Apoya Gestión de Baterías",
+          "messageBody": "Apoya la gestión adecuada de baterías para reducir la contaminación. Contribuye a un futuro más limpio y sostenible al reciclar tus baterías de manera responsable.",
+          "messageImage": "https://firebasestorage.googleapis.com/v0/b/ecorecicla-21618.appspot.com/o/img_battery_10.jpg?alt=media&token=ed9199ed-adde-452f-9585-028cc4386ce6"
+        }
+      ]
+    }
+  ]
+}

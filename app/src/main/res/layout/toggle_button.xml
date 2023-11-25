@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLight"
+            style="@style/ToggleButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claro"
+            app:icon="@drawable/ic_light" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSystem"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_regular"
+            android:text="Sistema" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDark"
+            style="@style/ToggleButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oscuro"
+            app:icon="@drawable/ic_night" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <LinearLayout
+        android:id="@+id/llProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            style="@style/ProgressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextCardStatsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Por favor espere..."
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

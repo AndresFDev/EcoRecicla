@@ -9,7 +9,6 @@ import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -25,8 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.ecorecicla.EcoApp;
+import com.example.ecorecicla.EcoRecicla;
 import com.example.ecorecicla.R;
 import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.UserData;
@@ -68,10 +66,9 @@ public class MainActivity extends AppCompatActivity {
         customMenu();
         menuView.setOnItemSelectedListener(navItemSelectedListener);
 
-        EcoApp ecoApp = (EcoApp) getApplication();
+        EcoRecicla ecoRecicla = (EcoRecicla) getApplication();
 
-        ecoApp.setMenuView(menuView);
-        //setupBadge();
+        ecoRecicla.setMenuView(menuView);
         setupMenuView();
         loadUserData();
         loadDefaultFragment(savedInstanceState);
@@ -174,14 +171,14 @@ public class MainActivity extends AppCompatActivity {
         if (llProgressBar != null) {
 
             if (toggleButton != null) {
-                int themeMode = ((EcoApp) getApplication()).getThemeMode();
+                int themeMode = ((EcoRecicla) getApplication()).getThemeMode();
                 toggleButton.check(getThemeButtonId(themeMode));
 
                 toggleButton.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
                     if (isChecked) {
                         llProgressBar.setVisibility(View.VISIBLE);
                         int newThemeMode = getThemeModeFromButtonId(checkedId);
-                        ((EcoApp) getApplication()).setAppTheme(MainActivity.this, newThemeMode);
+                        ((EcoRecicla) getApplication()).setAppTheme(MainActivity.this, newThemeMode);
                     } else {
                         llProgressBar.setVisibility(View.GONE);
                     }
@@ -212,14 +209,6 @@ public class MainActivity extends AppCompatActivity {
             return AppCompatDelegate.MODE_NIGHT_YES;
         }
         return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-    }
-
-    private void setupBadge() {
-        BadgeDrawable badge = menuView.getOrCreateBadge(R.id.tips);
-        badge.setBackgroundColor(ContextCompat.getColor(this, R.color.colorError));
-        badge.setHorizontalOffset(-5);
-        badge.setVerticalOffset(-5);
-        badge.setVisible(true);
     }
 
     private void setupMenuView() {

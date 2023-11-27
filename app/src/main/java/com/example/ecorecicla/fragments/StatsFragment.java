@@ -37,6 +37,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+// Importaciones omitidas por brevedad
+
 public class StatsFragment extends Fragment {
     private RecyclerView rvStatsCategory;
     private FrameLayout frameAnimation;
@@ -46,65 +48,62 @@ public class StatsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflar el diseño de la interfaz de usuario para este fragmento
         View rootView = inflater.inflate(R.layout.fragment_stats, container, false);
+
+        // Inicializar vistas y datos
         frameAnimation = rootView.findViewById(R.id.frameAnimation);
         tvMessage = rootView.findViewById(R.id.tvMessage);
         rvStatsCategory = rootView.findViewById(R.id.rvStatsCategory);
         entryData = new EntryData(requireContext());
         entry = entryData.getEntry();
 
+        // Configurar la vista de estadísticas
         setupStatsRecyclerView();
 
         return rootView;
     }
 
-    Map<String, Double> categoryTotals = new HashMap<>();
+    // Método principal para configurar la vista de estadísticas
     private void setupStatsRecyclerView() {
         if (entry != null) {
             UserData userData = new UserData(getContext());
             User userId = userData.getCurrentUser();
 
+            // Listas para almacenar elementos y estadísticas
             List<Object> allItems = new ArrayList<>();
             List<Stats> allStats = new ArrayList<>();
 
-            processCategoryList(entry.getPaperList(), "PAPER", userId.getId(), categoryTotals, allItems, allStats);
-            processCategoryList(entry.getElectronicList(), "ELECTRONIC", userId.getId(), categoryTotals, allItems, allStats);
-            processCategoryList(entry.getGlassList(), "GLASS", userId.getId(), categoryTotals, allItems, allStats);
-            processCategoryList(entry.getCardboardList(), "CARDBOARD", userId.getId(), categoryTotals, allItems, allStats);
-            processCategoryList(entry.getTextilesList(), "TEXTILES", userId.getId(), categoryTotals, allItems, allStats);
-
+            // Procesar diferentes categorías de elementos
+            processCategoryList(entry.getPaperList(), "PAPER", userId.getId(), allItems, allStats);
+            processCategoryList(entry.getElectronicList(), "ELECTRONIC", userId.getId(), allItems, allStats);
+            processCategoryList(entry.getGlassList(), "GLASS", userId.getId(), allItems, allStats);
+            processCategoryList(entry.getCardboardList(), "CARDBOARD", userId.getId(), allItems, allStats);
+            processCategoryList(entry.getTextilesList(), "TEXTILES", userId.getId(), allItems, allStats);
 
             processPlasticCategory(entry.getPlastic(), userId.getId(), allItems, allStats);
             processSteelCategory(entry.getSteel(), userId.getId(), allItems, allStats);
             processBatteryCategory(entry.getBattery(), userId.getId(), allItems, allStats);
 
+            // Manejar casos de listas vacías o no vacías
             if (allItems == null || allItems.size() == 0) {
-                rvStatsCategory.setVisibility(View.GONE);
-                frameAnimation.setVisibility(View.VISIBLE);
-                tvMessage.setVisibility(View.VISIBLE);
+                handleEmptyStats();
             } else {
-                rvStatsCategory.setVisibility(View.VISIBLE);
-                frameAnimation.setVisibility(View.GONE);
-                tvMessage.setVisibility(View.GONE);
-            }
-
-            if (!allStats.isEmpty()) {
-                String maxCategory = findMaxCategory(allStats);
-                Log.e("MaxCategoryFragment", maxCategory);
-                StatsAdapter statsAdapter = new StatsAdapter(getContext(), allItems, userId.getId(), maxCategory);
-                rvStatsCategory.setLayoutManager(new LinearLayoutManager(requireContext()));
-                rvStatsCategory.setAdapter(statsAdapter);
+                handleNonEmptyStats(allItems, allStats, userId.getId());
             }
         } else {
-            // Imprimir un mensaje o realizar alguna acción en caso de que entry sea nulo
+            // Manejar entrada nula
             Log.e("StatsFragment", "entry es nulo");
         }
     }
 
-    private void processCategoryList(List<Category> categoryList, String categoryName, int userId, Map<String, Double> categoryTotals, List<Object> allItems, List<Stats> allStats) {
+    // Método para procesar una lista de categorías
+    private void processCategoryList(List<Category> categoryList, String categoryName, int userId, List<Object> allItems, List<Stats> allStats) {
+        // Variables para acumular cantidades y precios
         double totalQuantity = 0;
         double totalPrice = 0;
 
+        // Procesar cada elemento en la lista de categorías
         if (categoryList != null) {
             for (Category category : categoryList) {
                 if (category.getUserId() == userId) {
@@ -114,6 +113,7 @@ public class StatsFragment extends Fragment {
             }
         }
 
+        // Crear estadísticas para la categoría y agregar a las listas
         Stats categoryStats = new Stats();
         if (totalQuantity > 0 || totalPrice > 0) {
             categoryStats.addCategoryStats(categoryName, totalQuantity, totalPrice);
@@ -122,6 +122,7 @@ public class StatsFragment extends Fragment {
         }
     }
 
+    // Métodos similares para procesar otras categorías (plástico, acero, batería)...
     private void processPlasticCategory(Map<String, List<PlasticItem>> plasticMap, int userId, List<Object> allItems, List<Stats> allStats) {
         double totalQuantityPlastic = 0;
         double totalPricePlastic = 0;
@@ -185,9 +186,35 @@ public class StatsFragment extends Fragment {
         }
     }
 
+    // Método para manejar casos de estadísticas vacías
+    private void handleEmptyStats() {
+        rvStatsCategory.setVisibility(View.GONE);
+        frameAnimation.setVisibility(View.VISIBLE);
+        tvMessage.setVisibility(View.VISIBLE);
+    }
+
+    // Método para manejar casos de estadísticas no vacías
+    private void handleNonEmptyStats(List<Object> allItems, List<Stats> allStats, int userId) {
+        rvStatsCategory.setVisibility(View.VISIBLE);
+        frameAnimation.setVisibility(View.GONE);
+        tvMessage.setVisibility(View.GONE);
+
+        // Encontrar la categoría con el valor máximo
+        String maxCategory = findMaxCategory(allStats);
+        Log.e("MaxCategoryFragment", maxCategory);
+
+        // Configurar el adaptador para la vista de reciclaje
+        StatsAdapter statsAdapter = new StatsAdapter(getContext(), allItems, userId, maxCategory);
+        rvStatsCategory.setLayoutManager(new LinearLayoutManager(requireContext()));
+        rvStatsCategory.setAdapter(statsAdapter);
+    }
+
+    // Método para encontrar la categoría con el valor máximo
     private String findMaxCategory(List<Stats> allStats) {
+        // Mapa para almacenar totales de categorías
         Map<String, Double> categoryTotals = new HashMap<>();
 
+        // Calcular totales de categorías desde las estadísticas
         for (Stats stats : allStats) {
             Set<String> categories = stats.getCategories();
             for (String category : categories) {
@@ -198,6 +225,7 @@ public class StatsFragment extends Fragment {
             }
         }
 
+        // Encontrar la categoría con el total máximo
         String maxCategory = "";
         double maxTotal = 0;
 
@@ -213,5 +241,4 @@ public class StatsFragment extends Fragment {
 
         return maxCategory;
     }
-
 }

@@ -27,11 +27,13 @@ public class NotificationPermissionHelper {
     private final ActivityResultLauncher<String> requestPermissionLauncher;
     private AlertDialog alertDialog;
 
+    // Constructor que recibe el contexto y el lanzador de permisos
     public NotificationPermissionHelper(Context context, ActivityResultLauncher<String> requestPermissionLauncher) {
         this.context = context;
         this.requestPermissionLauncher = requestPermissionLauncher;
     }
 
+    // Método para verificar si los permisos de notificación están habilitados
     public void checkNotificationPermission() {
         Log.d("PermissionDebug", "Checking if notifications are enabled...");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !areNotificationsEnabled(context)) {
@@ -42,18 +44,21 @@ public class NotificationPermissionHelper {
         }
     }
 
+    // Método para verificar si las notificaciones están habilitadas
     public boolean areNotificationsEnabled(Context context) {
         Log.d("PermissionDebug", "Checking if notifications are enabled...");
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
         return notificationManagerCompat.areNotificationsEnabled();
     }
 
+    // Método para solicitar permisos de notificación
     private void requestNotificationPermission() {
         Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, context.getPackageName());
         context.startActivity(intent);
     }
 
+    // Método para mostrar un diálogo de permisos de notificación
     private void showNotificationDialog() {
         Log.d("PermissionDebug", "Showing notification dialog...");
         View customView = LayoutInflater.from(context).inflate(R.layout.dialog_permission, null);
@@ -66,6 +71,7 @@ public class NotificationPermissionHelper {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.DialogTransparent);
         builder.setView(customView);
 
+        // Obtener colores dinámicos para el diseño en Android 12 o superior
         int dynamicAccentColor = 0;
         int dynamicAccentColorDefault = 0;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
@@ -73,18 +79,23 @@ public class NotificationPermissionHelper {
             dynamicAccentColorDefault = getColorDynamicAccentDefault();
         }
 
+        // Establecer colores dinámicos en las vistas
         imageView.setImageTintList(ColorStateList.valueOf(dynamicAccentColor));
         btnAccept.setBackgroundTintList(ColorStateList.valueOf(dynamicAccentColorDefault));
         btnCancel.setBackgroundTintList(ColorStateList.valueOf(dynamicAccentColorDefault));
+
+        // Configurar el clic del botón Aceptar
         btnAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("PermissionDebug", "btnAccept clicked");
+                // Solicitar permisos de notificación
                 requestNotificationPermission();
                 alertDialog.dismiss();
             }
         });
 
+        // Configurar el clic del botón Cancelar
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,9 +105,9 @@ public class NotificationPermissionHelper {
 
         // Mostrar el diálogo
         alertDialog = builder.show();
-
     }
 
+    // Método para obtener el color dinámico del acento predeterminado en Android 12 o superior
     @RequiresApi(api = Build.VERSION_CODES.S)
     private int getColorDynamicAccentDefault() {
         int dynamicAccentColorDefault = ColorUtils.blendARGB(
@@ -108,6 +119,7 @@ public class NotificationPermissionHelper {
         return dynamicAccentColorDefault;
     }
 
+    // Método para obtener el color dinámico del acento en Android 12 o superior
     @RequiresApi(api = Build.VERSION_CODES.S)
     private int getColorDynamicAccent() {
         int dynamicAccentColor = ColorUtils.blendARGB(

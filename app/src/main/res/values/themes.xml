@@ -23,6 +23,9 @@
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="materialDividerStyle">@style/Widget.App.MaterialDivider</item>
+        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 
     <style name="SplashScreenTheme">
@@ -404,5 +407,29 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="fontFamily">@font/product_sans_regular</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Widget.App.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.App.SnackbarButton" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/colorSecondary</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipIcon">@drawable/ic_close</item>
+        <item name="chipIconTint">@color/colorPrimary</item>
+        <item name="chipBackgroundColor">@color/colorPrimaryContainer</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.App.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
     </style>
 </resources>

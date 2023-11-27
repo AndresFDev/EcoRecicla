@@ -28,16 +28,19 @@ public class EntryData {
     private Context context;
     private Entry entry;
 
+    // Constructor
     public EntryData(Context context) {
         this.context = context;
         this.entry = createDefaultEntry();
         loadEntryData();
     }
 
+    // Método para obtener la entrada actual
     public Entry getEntry() {
         return entry;
     }
 
+    // Constantes para los códigos de validación
     public static final int SUCCESS = 0;
     public static final int EMPTY_QUANTITY = 1;
     public static final int INVALID_QUANTITY = 2;
@@ -49,6 +52,7 @@ public class EntryData {
     public static final int MISSING_FIELDS = 8;
     public static final String DATE_FORMAT = "dd/MM/yyyy";
 
+    // Método para validar los campos de una entrada
     public int validateEntryFields(String quantity, String subcategory, String date, String price) {
         if (quantity.isEmpty() && subcategory.isEmpty() && date.isEmpty() && price.isEmpty()) {
             return MISSING_FIELDS;
@@ -85,6 +89,7 @@ public class EntryData {
         return SUCCESS;
     }
 
+    // Método para verificar el formato de una fecha
     public boolean isValidFormat(String value, String format) {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         sdf.setLenient(false);
@@ -97,6 +102,7 @@ public class EntryData {
         }
     }
 
+    // Métodos para agregar entradas de plástico, acero y batería
     public void addPlasticEntry(String subCategory, PlasticItem plasticItem) {
         if (entry.getPlastic() == null) {
             entry.setPlastic(new HashMap<>());
@@ -131,16 +137,18 @@ public class EntryData {
         if (entry.getBattery() == null) {
             entry.setBattery(new HashMap<>());
         }
+
         List<BatteryItem> batteryItemList = loadBatteryItemList(subCategory);
 
         if (batteryItemList == null) {
             batteryItemList = new ArrayList<>();
         }
+
         batteryItemList.add(batteryItem);
         entry.getBattery().put(subCategory, batteryItemList);
     }
 
-
+    // Métodos para cargar listas de plástico, acero y batería
     public List<PlasticItem> loadPlasticItemList(String subCategory) {
         List<PlasticItem> plasticItemList = new ArrayList<>();
 
@@ -184,6 +192,7 @@ public class EntryData {
         return batteryItemList;
     }
 
+    // Método para cargar datos de entrada desde un archivo JSON
     public void loadEntryData() {
         try (BufferedReader reader = new BufferedReader(new FileReader(context.getFileStreamPath(FILE_PATH)))) {
             StringBuilder jsonBuilder = new StringBuilder();
@@ -203,6 +212,7 @@ public class EntryData {
         }
     }
 
+    // Método para guardar datos de entrada en un archivo JSON
     public void saveEntryData() {
         try (FileOutputStream outputStream = context.openFileOutput(FILE_PATH, Context.MODE_PRIVATE);
              OutputStreamWriter writer = new OutputStreamWriter(outputStream)) {
@@ -214,6 +224,7 @@ public class EntryData {
         }
     }
 
+    // Método para crear una entrada predeterminada
     private Entry createDefaultEntry() {
         Map<String, List<PlasticItem>> plastic = new HashMap<>();
         List<Category> paperList = new ArrayList<>();

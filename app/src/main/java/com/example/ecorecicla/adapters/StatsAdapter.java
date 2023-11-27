@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecorecicla.CategoryAdapter;
 import com.example.ecorecicla.EntryData;
 import com.example.ecorecicla.R;
 import com.example.ecorecicla.UserData;
@@ -27,11 +26,11 @@ import com.example.ecorecicla.models.SteelItem;
 import com.example.ecorecicla.models.User;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -79,6 +78,7 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.bottom_sheet);
         MaterialTextView tvTitle = bottomSheetDialog.findViewById(R.id.tvTitle);
+        ChipGroup chipGroup = bottomSheetDialog.findViewById(R.id.chipGroup);
         RecyclerView rvObjets = bottomSheetDialog.findViewById(R.id.rvObjets);
 
         if (clickedItem instanceof Stats && rvObjets != null) {
@@ -91,36 +91,45 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
 
                 switch (selectedCategory) {
                     case "PLASTIC":
+                        tvTitle.setText("Plásticos");
                         selectedCategoryList = processPlasticCategory(entry.getPlastic(), userId.getId());
                         break;
                     case "PAPER":
+                        tvTitle.setText("Papel");
                         selectedCategoryList = processCategoryList(entry.getPaperList(), selectedCategory, userId.getId());
                         break;
                     case "ELECTRONIC":
+                        tvTitle.setText("Electrónicos");
                         selectedCategoryList = processCategoryList(entry.getElectronicList(), selectedCategory, userId.getId());
                         break;
                     case "GLASS":
+                        tvTitle.setText("Vidrio");
                         selectedCategoryList = processCategoryList(entry.getGlassList(), selectedCategory, userId.getId());
                         break;
                     case "CARDBOARD":
+                        tvTitle.setText("Cartón");
                         selectedCategoryList = processCategoryList(entry.getCardboardList(), selectedCategory, userId.getId());
                         break;
                     case "STEEL":
+                        tvTitle.setText("Aceros");
                         selectedCategoryList = processSteelCategory(entry.getSteel(), userId.getId());
                         break;
                     case "TEXTILES":
+                        tvTitle.setText("Textiles");
                         selectedCategoryList = processCategoryList(entry.getTextilesList(), selectedCategory, userId.getId());
                         break;
                     case "BATTERY":
+                        tvTitle.setText("Baterías");
                         selectedCategoryList = processBatteryCategory(entry.getBattery(), userId.getId());
                         break;
                     default:
                         selectedCategoryList = new ArrayList<>();
                         break;
                 }
-                tvTitle.setText(selectedCategory);
-                CategoryAdapter categoryAdapter = new CategoryAdapter(selectedCategoryList);
+
+                CategoryAdapter categoryAdapter = new CategoryAdapter(selectedCategoryList, chipGroup);
                 rvObjets.setLayoutManager(new LinearLayoutManager(context));
+                categoryAdapter.addFilterChips();
                 rvObjets.setAdapter(categoryAdapter);
             } else {
                 Toast.makeText(context, "Data not found", Toast.LENGTH_SHORT).show();

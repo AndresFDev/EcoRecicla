@@ -20,6 +20,9 @@
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="materialCalendarTheme">@style/ThemeOverlay.App.DatePicker</item>
         <item name="materialDividerStyle">@style/Widget.App.MaterialDivider</item>
+        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 
     <style name="SplashScreenTheme">
@@ -296,5 +299,36 @@
         </item>
         <!-- Customize text field of the text input mode. -->
         <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+    </style>
+
+    <style name="Widget.App.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/colorDarkPrimaryContainer</item>
+        <item name="android:textColor">@color/colorDarkOnPrimary</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+    </style>
+
+    <style name="Widget.App.SnackbarButton" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Snackbar" parent="">
+        <item name="colorPrimaryInverse">@color/colorDarkOnPrimary</item>
+        <item name="colorOnSurfaceInverse">@color/colorDarkSecondary</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipIconTint">@color/colorDarkSecondary</item>
+        <item name="chipBackgroundColor">@color/colorDarkPrimaryContainer</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeColor">@color/colorDarkSecondary</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="android:textColor">@color/colorDarkSecondary</item>
+    </style>
+
+    <style name="TextAppearance.App.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
     </style>
 </resources>

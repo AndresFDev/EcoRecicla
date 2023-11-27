@@ -9,7 +9,6 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Lógica para mostrar la notificación aquí (puedes utilizar un Snackbar, Toast o una notificación del sistema)
         Toast.makeText(context, "¡Nuevos tips disponibles!", Toast.LENGTH_SHORT).show();
     }
 }

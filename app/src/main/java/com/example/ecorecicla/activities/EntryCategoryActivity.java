@@ -3,6 +3,7 @@ package com.example.ecorecicla.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.ecorecicla.models.Category;
 import com.example.ecorecicla.CategoryMapper;
-import com.example.ecorecicla.EcoApp;
+import com.example.ecorecicla.EcoRecicla;
 import com.example.ecorecicla.EntryData;
 import com.example.ecorecicla.R;
 import com.example.ecorecicla.UserData;
@@ -24,8 +25,8 @@ import com.example.ecorecicla.models.SteelItem;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointBackward;
-import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -34,12 +35,9 @@ import com.google.android.material.textview.MaterialTextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class EntryCategoryActivity extends AppCompatActivity {
     private TextInputLayout tilWeight, tilType, tilDate, tilPrice;
@@ -252,9 +250,17 @@ public class EntryCategoryActivity extends AppCompatActivity {
 
         }
 
-        entryData.saveEntryData();
-        entryData.loadEntryData();
-        handleEntryResult(EntryData.SUCCESS);
+        Snackbar.make(findViewById(android.R.id.content), "¿Estás seguro de guardar la información?", Snackbar.LENGTH_LONG)
+                .setTextColor(getResources().getColor(R.color.white))
+                .setAction("Aceptar", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        entryData.saveEntryData();
+                        entryData.loadEntryData();
+                        handleEntryResult(EntryData.SUCCESS);
+                    }
+                })
+                .show();
     }
 
     private void setupTextWatchers() {
@@ -292,7 +298,7 @@ public class EntryCategoryActivity extends AppCompatActivity {
             case EntryData.SUCCESS:
                 Intent intent = new Intent(EntryCategoryActivity.this, MainActivity.class);
                 startActivity(intent);
-                EcoApp.showNotification(getApplicationContext());
+                Toast.makeText(this, "¡Guardado con exito!", Toast.LENGTH_LONG).show();
                 finish();
                 break;
             case EntryData.MISSING_FIELDS:

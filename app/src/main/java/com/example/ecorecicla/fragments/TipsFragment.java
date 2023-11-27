@@ -17,9 +17,8 @@ import android.widget.Toast;
 
 import com.example.ecorecicla.R;
 import com.example.ecorecicla.adapters.TipGridAdapter;
-import com.example.ecorecicla.TipList;
+import com.example.ecorecicla.models.TipList;
 import com.example.ecorecicla.models.Tip;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.gson.Gson;
 
@@ -32,6 +31,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 public class TipsFragment extends Fragment {
+
     private TextView tvDays;
     private LinearProgressIndicator piDaysOff;
     private List<Tip> tipList;
@@ -39,20 +39,22 @@ public class TipsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_tips, container, false);
 
+        // Inicializar las vistas
         piDaysOff = rootView.findViewById(R.id.piDaysOff);
         tvDays = rootView.findViewById(R.id.tvDays);
         rvTips = rootView.findViewById(R.id.rvTips);
 
-        progressBar();
-        setupRecyclerViews();
+        // Configurar la barra de progreso
+        setupProgressBar();
+        // Configurar y cargar la lista de consejos
+        setupTips();
 
         return rootView;
     }
 
-    public void progressBar() {
+    private void setupProgressBar() {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-5:00"));
         int currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -77,12 +79,14 @@ public class TipsFragment extends Fragment {
         animation.start();
     }
 
-    private void setupRecyclerViews() {
-        loadJSONFromAssetTips();
+    private void setupTips() {
+        // Cargar la lista de consejos desde el archivo JSON
+        loadTipsFromJSON();
+        // Configurar y mostrar la lista de consejos en el RecyclerView
         setupRecyclerViewTips();
     }
 
-    private void loadJSONFromAssetTips() {
+    private void loadTipsFromJSON() {
         try {
             InputStream inputStream = requireActivity().getAssets().open("tips.json");
             int size = inputStream.available();
@@ -91,16 +95,12 @@ public class TipsFragment extends Fragment {
             inputStream.close();
             String json = new String(buffer, StandardCharsets.UTF_8);
 
-            Log.d("JSON Data", json);
-
+            // Utilizar Gson para convertir el JSON en objetos Java
             Gson gson = new Gson();
             TipList tipListData = gson.fromJson(json, TipList.class);
 
-            if (tipListData != null) {
-                tipList = tipListData.getTips();
-            } else {
-                tipList = new ArrayList<>();
-            }
+            // Verificar si la lista de consejos es válida y asignarla
+            tipList = (tipListData != null) ? tipListData.getTips() : new ArrayList<>();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -109,17 +109,17 @@ public class TipsFragment extends Fragment {
     }
 
     private void setupRecyclerViewTips() {
-
         if (tipList != null && !tipList.isEmpty()) {
+            // Configurar el RecyclerView con un diseño de cuadrícula
             GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
             rvTips.setLayoutManager(gridLayoutManager);
 
+            // Crear un adaptador para la lista de consejos y asignarlo al RecyclerView
             TipGridAdapter adapter = new TipGridAdapter(tipList, getContext());
             rvTips.setAdapter(adapter);
         } else {
-            Toast.makeText(getContext(), "Lista Tip no disponible", Toast.LENGTH_LONG).show();
+            // Mostrar un mensaje si la lista de consejos está vacía
+            Toast.makeText(getContext(), "Lista de consejos no disponible", Toast.LENGTH_LONG).show();
         }
-
     }
-
 }

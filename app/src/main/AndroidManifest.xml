@@ -2,7 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+
+
     <application
+        android:name=".EcoRecicla"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,10 +28,7 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="34">
         <activity
-            android:name=".TipsDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,34 +37,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name=".RecoveryPassActivity"
+            android:name=".activities.SignUpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activities.RecoveryPassActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.EntryCategoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".activities.StatsDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".activities.TipsDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".EntryCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StatsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StatsDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TipsActivity"
-            android:exported="false" />
+
+        <receiver android:name=".NotificationReceiver" />
     </application>
 
 </manifest>

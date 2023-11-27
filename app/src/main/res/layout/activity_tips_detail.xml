@@ -4,23 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TipsDetailActivity">
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnBack"
-        style="@style/ButtonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".activities.TipsDetailActivity">
 
     <include
         android:id="@+id/tvTitle"
-        layout="@layout/app_logo"
-        android:layout_width="match_parent"
+        layout="@layout/app_logo_small"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -33,277 +25,271 @@
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <LinearLayout
-        android:id="@+id/llProgress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTips">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <ScrollView
+            android:id="@+id/svTips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTips">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="@string/daysOff"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:orientation="vertical">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvDays"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="@string/valDaysOff"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTip1"
+                    style="@style/CardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
 
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/piDaysOff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            app:indicatorColor="@color/colorPrimary"
-            app:trackColor="@color/colorSecondary"
-            app:trackCornerRadius="5dp"
-            app:trackThickness="12dp" />
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/colorTransparent"
+                                app:cardCornerRadius="0dp"
+                                app:strokeWidth="0dp">
+
+                                <ImageView
+                                    android:id="@+id/ivTip1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/img_plant" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmerLayout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp">
+
+                                <View
+                                    style="@style/ShimmerStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        </FrameLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvTip1"
+                                style="@style/TextCardStatsStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvTitleTip1" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvBodyTip1"
+                                style="@style/TextBodyStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:text="@string/tvBodyTip1" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTip2"
+                    style="@style/CardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/colorTransparent"
+                                app:cardCornerRadius="0dp"
+                                app:strokeWidth="0dp">
+
+                                <ImageView
+                                    android:id="@+id/ivTip2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/img_plant" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmerLayout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp">
+
+                                <View
+                                    style="@style/ShimmerStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        </FrameLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvTip2"
+                                style="@style/TextCardStatsStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvTitleTip1" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvBodyTip2"
+                                style="@style/TextBodyStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:text="@string/tvBodyTip1" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTip3"
+                    style="@style/CardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/colorTransparent"
+                                app:cardCornerRadius="0dp"
+                                app:strokeWidth="0dp">
+
+                                <ImageView
+                                    android:id="@+id/ivTip3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/img_plant" />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmerLayout3"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp">
+
+                                <View
+                                    style="@style/ShimmerStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        </FrameLayout>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvTip3"
+                                style="@style/TextCardStatsStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvTitleTip1" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvBodyTip3"
+                                style="@style/TextBodyStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:justificationMode="inter_word"
+                                android:text="@string/tvBodyTip1" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
 
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/svTips"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/llProgress"
-        app:layout_constraintBottom_toBottomOf="parent">
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardButtonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/ButtonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvTip1"
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginStart="12dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvTip1"
-                            style="@style/TextCardStatsStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvTitleTip1" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvBodyTip1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/product_sans_regular"
-                            android:justificationMode="inter_word"
-                            android:text="@string/tvBodyTip1"
-                            android:textColor="@color/colorPrimary" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        app:cardBackgroundColor="@color/colorTransparent"
-                        app:cardCornerRadius="40dp"
-                        app:strokeWidth="0dp">
-
-                        <ImageView
-                            android:id="@+id/ivTip1"
-                            android:layout_width="70dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/img_plant" />
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvTip2"
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginStart="12dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvTip2"
-                            style="@style/TextCardStatsStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvTitletip2" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvBodyTip2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/product_sans_regular"
-                            android:justificationMode="inter_word"
-                            android:text="@string/tvBodyTip1"
-                            android:textColor="@color/colorPrimary" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <ImageView
-                        android:id="@+id/ivTip2"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="8dp"
-                        android:src="@drawable/img_no_plastic" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvTip3"
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginStart="12dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvTip3"
-                            style="@style/TextCardStatsStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvTitle3" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvBodyTip3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/product_sans_regular"
-                            android:justificationMode="inter_word"
-                            android:text="@string/tvBodyTip1"
-                            android:textColor="@color/colorPrimary" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <ImageView
-                        android:id="@+id/ivTip3"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="8dp"
-                        android:src="@drawable/img_no_plastic_2" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cvTip4"
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginStart="12dp"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="8"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvTip4"
-                            style="@style/TextCardStatsStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/tvTitle4" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvBodyTip4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/product_sans_regular"
-                            android:justificationMode="inter_word"
-                            android:text="@string/tvBody4"
-                            android:textColor="@color/colorPrimary" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <ImageView
-                        android:id="@+id/ivTip4"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="8dp"
-                        android:src="@drawable/img_recycle" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

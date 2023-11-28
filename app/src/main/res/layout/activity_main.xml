@@ -55,11 +55,10 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
+                style="@style/CardImageTheme"
                 android:id="@+id/cvIconImage"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:padding="2dp"
-                app:cardBackgroundColor="@color/colorPrimary"
                 app:cardCornerRadius="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +71,7 @@
 
                 <ImageView
                     android:id="@+id/ivProfileIcon"
+                    android:padding="4dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"

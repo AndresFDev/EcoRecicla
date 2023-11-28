@@ -44,11 +44,11 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         app:cardCornerRadius="75dp"
-                        app:cardBackgroundColor="@color/colorPrimary25"
                         app:cardElevation="4dp">
 
                         <ImageView
                             android:id="@+id/ivUserImageProfile"
+                            android:padding="8dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"

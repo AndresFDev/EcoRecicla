@@ -122,10 +122,15 @@ public class UserData {
         List<User> userList = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(context.getFileStreamPath(FILENAME)))) {
             Gson gson = new Gson();
-            userList = Arrays.asList(gson.fromJson(reader, User[].class));
+            User[] usersArray = gson.fromJson(reader, User[].class);
+            if (usersArray != null) {
+                userList = new ArrayList<>(Arrays.asList(usersArray));
+            }
             Log.d("UserData", "Usuarios cargados correctamente desde userData.json");
         } catch (IOException e) {
             Log.e("UserData", "Error al cargar usuarios: " + e.getMessage());
+        } catch (Exception e) {
+            Log.e("UserData", "Error al cargar usuarios. Excepción: " + e.getClass().getSimpleName());
         }
         return userList;
     }
@@ -171,16 +176,12 @@ public class UserData {
         List<User> userList = loadUserList();
 
         for (User user : userList) {
-            if (!isCredentialMatched(user, credential)) {
-                return USER_NOT_FOUND;
-            }
-
-            if (!user.getPassword().equals(password)) {
-                return INCORRECT_PASSWORD;
-            }
-
-            if (isCredentialMatched(user, credential) && user.getPassword().equals(password)) {
-                return SUCCESS;
+            if (isCredentialMatched(user, credential)) {
+                if (user.getPassword().equals(password)) {
+                    return SUCCESS; // Usuario encontrado y contraseña correcta
+                } else {
+                    return INCORRECT_PASSWORD; // Usuario encontrado pero contraseña incorrecta
+                }
             }
         }
 
@@ -188,15 +189,15 @@ public class UserData {
     }
 
     // Método para editar un usuario existente
-    public int editUser(User editedUser, String username, String email, String password, String newPassword, String confirmPassword, boolean validatePassword) {
+    public int editUser(User editedUser, String userName, String email, String password, String newPassword, String confirmPassword, boolean validatePassword) {
         List<User> userList = loadUserList();
         User currentUser = getCurrentUser();
 
-        if (areEditFieldsEmpty(username, email)) {
+        if (areEditFieldsEmpty(userName, email)) {
             return FIELDS_EMPTY;
         }
 
-        if (isUsernameAlreadyExists(userList, editedUser, username)) {
+        if (isUsernameAlreadyExists(userList, editedUser, userName)) {
             return USERNAME_ALREADY_EXISTS;
         }
 

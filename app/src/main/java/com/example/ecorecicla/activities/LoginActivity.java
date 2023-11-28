@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Inicializar instancias
-        userData = new UserData(this);
         sessionManager = new SessionManager(this);
+        userData = new UserData(this, sessionManager);
 
         // Verificar si hay una sesión activa y si se debe recordar
         if (sessionManager.isLoggedIn() && sessionManager.getRememberSession()) {

@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        userData = new UserData(this);
+        SessionManager sessionManager = new SessionManager(this);
+        userData = new UserData(this, sessionManager);
 
         menuView = findViewById(R.id.menuView);
         ivProfileIcon = findViewById(R.id.ivProfileIcon);

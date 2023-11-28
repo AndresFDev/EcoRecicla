@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.ecorecicla.EntryData;
 import com.example.ecorecicla.R;
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.UserData;
 import com.example.ecorecicla.models.BatteryItem;
 import com.example.ecorecicla.models.Category;
@@ -81,7 +83,8 @@ public class ProfileFragment extends Fragment {
 
     // Cargar datos del usuario actual
     private void loadUserData() {
-        UserData userData = new UserData(getContext());
+        SessionManager sessionManager = new SessionManager(getContext());
+        UserData userData = new UserData(getContext(), sessionManager);
         User user = userData.getCurrentUser();
         idUser = user.getId();
         tvUserName.setText(user.getUserName());
@@ -231,12 +234,13 @@ public class ProfileFragment extends Fragment {
         double totalQuantity = 0;
         for (List<SteelItem> itemList : itemMap.values()) {
             totalQuantity += calculateTotalQuantity(itemList, idUser);
+
         }
 
         if(totalQuantity > 0) {
             entries.add(new PieEntry((float) totalQuantity, categoryName));
         }
-
+        Log.e("SteelDataEntries", String.valueOf(totalQuantity));
         return entries;
     }
 
@@ -281,11 +285,23 @@ public class ProfileFragment extends Fragment {
                     totalQuantity += Float.parseFloat(category.getQuantity());
                 }
             } else if (item instanceof PlasticItem) {
-                totalQuantity += Float.parseFloat(((PlasticItem) item).getQuantity());
+                PlasticItem plasticItem = (PlasticItem) item;
+                int plasticItemUserId = plasticItem.getUserId();
+                if (plasticItemUserId == userId) {
+                    totalQuantity += Float.parseFloat(plasticItem.getQuantity());
+                }
             } else if (item instanceof SteelItem) {
-                totalQuantity += Float.parseFloat(((SteelItem) item).getQuantity());
+                SteelItem steelItem = (SteelItem) item;
+                int steelItemUserId = steelItem.getUserId();
+                if (steelItemUserId == userId) {
+                    totalQuantity += Float.parseFloat(steelItem.getQuantity());
+                }
             } else if (item instanceof BatteryItem) {
-                totalQuantity += Float.parseFloat(((BatteryItem) item).getQuantity());
+                BatteryItem batteryItem = (BatteryItem) item;
+                int batteryItemUserId = batteryItem.getUserId();
+                if (batteryItemUserId == userId) {
+                    totalQuantity += Float.parseFloat(batteryItem.getQuantity());
+                }
             }
         }
 

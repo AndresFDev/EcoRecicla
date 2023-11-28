@@ -8,6 +8,8 @@ public class SessionManager {
     private static final String PREF_NAME = "MyAppPrefs";
     private static final String KEY_REMEMBER_SESSION = "rememberSession";
     private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
+    private static final String KEY_CURRENT_USER_ID = "currentUserId";
+
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private Context context;
@@ -42,6 +44,15 @@ public class SessionManager {
     public boolean isLoggedIn() {
         // Devuelve el valor asociado con KEY_IS_LOGGED_IN, si no existe devuelve false
         return sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
+    }
+
+    public void setCurrentUserId(int userId) {
+        editor.putInt(KEY_CURRENT_USER_ID, userId);
+        editor.apply();
+    }
+
+    public int getCurrentUserId() {
+        return sharedPreferences.getInt(KEY_CURRENT_USER_ID, -1);
     }
 
     // Método para limpiar toda la información de la sesión

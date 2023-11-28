@@ -21,10 +21,12 @@ import java.util.List;
 public class UserData {
     private static final String FILENAME = "userData.json";
     private static final int INVALID_ID = -1;
+    private SessionManager sessionManager;
     private Context context;
 
-    public UserData(Context context) {
+    public UserData(Context context, SessionManager sessionManager) {
         this.context = context;
+        this.sessionManager = sessionManager;
     }
 
     // Constantes para códigos de retorno
@@ -113,6 +115,9 @@ public class UserData {
         int newId = generateNewUserId(userList);
         user.setId(newId);
 
+        // Establecer el ID del usuario actual en SessionManager
+        sessionManager.setCurrentUserId(newId);
+
         userList.add(user);
         saveUserList(userList);
         return SUCCESS;
@@ -151,12 +156,17 @@ public class UserData {
     // Método para obtener el usuario actualmente logueado
     public User getCurrentUser() {
         List<User> userList = loadUserList();
+        SessionManager sessionManager = new SessionManager(context);
 
-        if (!userList.isEmpty()) {
-            return userList.get(userList.size() - 1);
-        } else {
-            return null;
+        int currentUserId = sessionManager.getCurrentUserId();
+
+        for (User user : userList) {
+            if (user.getId() == currentUserId) {
+                return user;
+            }
         }
+
+        return null;
     }
 
     // Método para iniciar sesión
@@ -178,7 +188,10 @@ public class UserData {
         for (User user : userList) {
             if (isCredentialMatched(user, credential)) {
                 if (user.getPassword().equals(password)) {
-                    return SUCCESS; // Usuario encontrado y contraseña correcta
+                    // Usuario encontrado y contraseña correcta
+                    // Establecer el ID del usuario actual en SessionManager
+                    sessionManager.setCurrentUserId(user.getId());
+                    return SUCCESS;
                 } else {
                     return INCORRECT_PASSWORD; // Usuario encontrado pero contraseña incorrecta
                 }

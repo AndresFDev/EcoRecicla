@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.ecorecicla.EntryData;
 import com.example.ecorecicla.R;
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.UserData;
 import com.example.ecorecicla.adapters.StatsAdapter;
 import com.example.ecorecicla.models.BatteryItem;
@@ -67,8 +68,10 @@ public class StatsFragment extends Fragment {
     // Método principal para configurar la vista de estadísticas
     private void setupStatsRecyclerView() {
         if (entry != null) {
-            UserData userData = new UserData(getContext());
+            SessionManager sessionManager = new SessionManager(getContext());
+            UserData userData = new UserData(getContext(), sessionManager);
             User userId = userData.getCurrentUser();
+            Log.d("StatsFragment", "Current user ID: " + userId.getId());
 
             // Listas para almacenar elementos y estadísticas
             List<Object> allItems = new ArrayList<>();

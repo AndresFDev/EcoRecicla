@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecorecicla.EntryData;
 import com.example.ecorecicla.R;
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.UserData;
 import com.example.ecorecicla.models.BatteryItem;
 import com.example.ecorecicla.models.Category;
@@ -70,7 +71,8 @@ public class StatsAdapter extends RecyclerView.Adapter<StatsAdapter.StatsViewHol
     }
 
     private void showDetails(Object clickedItem) {
-        UserData userData = new UserData(context);
+        SessionManager sessionManager = new SessionManager(context);
+        UserData userData = new UserData(context, sessionManager);
         User userId = userData.getCurrentUser();
         EntryData entryData = new EntryData(context);
         entry = entryData.getEntry();

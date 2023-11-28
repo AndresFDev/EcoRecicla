@@ -16,6 +16,7 @@ import android.text.TextWatcher;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.helpers.NotificationPermissionHelper;
 import com.example.ecorecicla.R;
 import com.example.ecorecicla.UserData;
@@ -126,7 +127,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void signUp() {
-        userData = new UserData(this);
+        SessionManager sessionManager = new SessionManager(this);
+        userData = new UserData(this, sessionManager);
         String userImage = "";
         String userName = tiUserName.getText().toString().toLowerCase();
         String email = tiEmail.getText().toString().toLowerCase();

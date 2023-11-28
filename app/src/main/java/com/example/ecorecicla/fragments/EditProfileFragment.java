@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ecorecicla.R;
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.UserData;
 import com.example.ecorecicla.activities.MainActivity;
 import com.example.ecorecicla.models.User;
@@ -81,7 +82,8 @@ public class EditProfileFragment extends Fragment {
         tilConfPassword = rootView.findViewById(R.id.tilConfPassword);
         btnSave = rootView.findViewById(R.id.btnSave);
         flSave = rootView.findViewById(R.id.flSave);
-        userData = new UserData(getContext());
+        SessionManager sessionManager = new SessionManager(getContext());
+        userData = new UserData(getContext(), sessionManager);
     }
 
     private void setupListeners() {

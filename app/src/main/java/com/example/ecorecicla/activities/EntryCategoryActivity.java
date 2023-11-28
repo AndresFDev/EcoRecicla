@@ -3,6 +3,7 @@ package com.example.ecorecicla.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.example.ecorecicla.SessionManager;
 import com.example.ecorecicla.models.Category;
 import com.example.ecorecicla.CategoryMapper;
 import com.example.ecorecicla.EcoRecicla;
@@ -164,7 +166,8 @@ public class EntryCategoryActivity extends AppCompatActivity {
     }
 
     private void newEntry() {
-        userData = new UserData(this);
+        SessionManager sessionManager = new SessionManager(this);
+        userData = new UserData(this, sessionManager);
         entryData = new EntryData(this);
         int idUser = userData.getCurrentUser().getId();
         String spanishTitle = getIntent().getStringExtra("title");
@@ -250,6 +253,7 @@ public class EntryCategoryActivity extends AppCompatActivity {
         }
 
         Snackbar.make(findViewById(android.R.id.content), "¿Estás seguro de guardar la información?", Snackbar.LENGTH_LONG)
+                .setTextColor(Color.WHITE)
                 .setAction("Aceptar", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -296,7 +300,7 @@ public class EntryCategoryActivity extends AppCompatActivity {
             case EntryData.SUCCESS:
                 Intent intent = new Intent(EntryCategoryActivity.this, MainActivity.class);
                 startActivity(intent);
-                EcoRecicla.showNotification(getApplicationContext());
+                Toast.makeText(this, "¡Guardado con exito!", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             case EntryData.MISSING_FIELDS:

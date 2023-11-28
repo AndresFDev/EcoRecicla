@@ -25,6 +25,7 @@ import com.google.android.material.textview.MaterialTextView;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
+
     private UserData userData;
     private SessionManager sessionManager;
     private MaterialButton btnRecoveryPass, btnLogin, btnSignUp;
@@ -37,18 +38,24 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Inicializar instancias
         userData = new UserData(this);
         sessionManager = new SessionManager(this);
 
-        // Verifica si ya hay una sesión activa
+        // Verificar si hay una sesión activa y si se debe recordar
         if (sessionManager.isLoggedIn() && sessionManager.getRememberSession()) {
             navigateToMainActivity();
         }
 
+        // Inicializar componentes de la interfaz de usuario
         initializeViews();
+
+        // Configurar escuchadores para los botones
         setupButtonListeners();
     }
 
+    // Inicializar vistas
     private void initializeViews() {
         tvTitle = findViewById(R.id.tvTitle);
         tilEmail = findViewById(R.id.tilEmail);
@@ -59,9 +66,16 @@ public class LoginActivity extends AppCompatActivity {
         btnRecoveryPass = findViewById(R.id.btnRecoveryPass);
         tietEmail = findViewById(R.id.tietEmail);
         tietPassword = findViewById(R.id.tietPassword);
-
     }
 
+    // Configurar escuchadores para los botones
+    private void setupButtonListeners() {
+        btnRecoveryPass.setOnClickListener(v -> navigateToRecoveryPass());
+        btnSignUp.setOnClickListener(v -> navigateToSignUp());
+        btnLogin.setOnClickListener(v -> handleLogin());
+    }
+
+    // Manejar el proceso de inicio de sesión
     private void handleLogin() {
         String credential = tietEmail.getText().toString().trim().toLowerCase();
         String password = tietPassword.getText().toString().trim();
@@ -70,34 +84,31 @@ public class LoginActivity extends AppCompatActivity {
         handleLoginResult(loginResult);
     }
 
+    // Navegar a la actividad principal
     private void navigateToMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
-    private void setupButtonListeners() {
-        btnRecoveryPass.setOnClickListener(v -> navigateToRecoveryPass());
-        btnSignUp.setOnClickListener(v -> navigateToSignUp());
-        btnLogin.setOnClickListener(v -> handleLogin());
-    }
-
+    // Navegar a la actividad de recuperación de contraseña
     private void navigateToRecoveryPass() {
         startActivity(new Intent(this, RecoveryPassActivity.class));
     }
 
+    // Navegar a la actividad de registro
     private void navigateToSignUp() {
         startActivity(new Intent(this, SignUpActivity.class));
     }
 
-
+    // Manejar el resultado del inicio de sesión
     private void handleLoginResult(int loginResult) {
         setupTextWatchers();
         String errorMessage = "";
-        Log.e("Resultado Login", String.valueOf(loginResult));
+
         switch (loginResult) {
             case UserData.BOTH_FIELDS_EMPTY:
-                errorMessage = "Campos obligatorios vacios";
+                errorMessage = "Campos obligatorios vacíos";
                 showError(tilEmail, errorMessage);
                 showError(tilPassword, errorMessage);
                 break;
@@ -110,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                 showError(tilEmail, errorMessage);
                 break;
             case UserData.EMPTY_PASSWORD_LOGIN:
-                errorMessage = "La contraseña está vacía. Porfavor ingresa tu contraseña";
+                errorMessage = "La contraseña está vacía. Por favor, ingresa tu contraseña";
                 showError(tilPassword, errorMessage);
                 break;
             case UserData.INCORRECT_PASSWORD:
@@ -125,15 +136,18 @@ public class LoginActivity extends AppCompatActivity {
                 break;
         }
 
+        // Mostrar mensaje de error si es necesario
         if (!errorMessage.isEmpty()) {
             Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Mostrar un error en el diseño de texto de entrada
     private void showError(TextInputLayout textInputLayout, String errorMessage) {
         textInputLayout.setError(errorMessage);
     }
 
+    // Configurar los oyentes de texto para borrar los errores después de la edición
     private void setupTextWatchers() {
         addTextWatcher(tilEmail);
         addTextWatcher(tilPassword);
@@ -143,7 +157,6 @@ public class LoginActivity extends AppCompatActivity {
         textInputLayout.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override

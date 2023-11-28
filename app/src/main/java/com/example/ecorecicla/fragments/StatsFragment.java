@@ -122,7 +122,7 @@ public class StatsFragment extends Fragment {
         }
     }
 
-    // Métodos similares para procesar otras categorías (plástico, acero, batería)...
+    // Métodos similares para procesar otras categorías (plástico, acero, batería)
     private void processPlasticCategory(Map<String, List<PlasticItem>> plasticMap, int userId, List<Object> allItems, List<Stats> allStats) {
         double totalQuantityPlastic = 0;
         double totalPricePlastic = 0;

@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ProfileFragment extends Fragment{
+public class ProfileFragment extends Fragment {
     private LinearLayoutCompat llData;
     private ImageView ivUserImageProfile;
     private MaterialTextView tvUserName;
@@ -79,6 +79,7 @@ public class ProfileFragment extends Fragment{
         }
     }
 
+    // Cargar datos del usuario actual
     private void loadUserData() {
         UserData userData = new UserData(getContext());
         User user = userData.getCurrentUser();
@@ -90,6 +91,7 @@ public class ProfileFragment extends Fragment{
         }
     }
 
+    // Cargar la imagen del usuario utilizando Glide
     private void loadUserImage(String imageUrl, ImageView imageView) {
         if (!imageUrl.isEmpty()) {
             Glide.with(this)
@@ -102,6 +104,7 @@ public class ProfileFragment extends Fragment{
         }
     }
 
+    // Crear y mostrar el gráfico circular (Pie Chart)
     private boolean graphicTime() {
         ArrayList<PieEntry> entries = new ArrayList<>();
 
@@ -127,7 +130,7 @@ public class ProfileFragment extends Fragment{
         }
 
         if (electronicList != null) {
-            entries.addAll(createEntriesFromList(electronicList, "Electrónicos", idUser));
+            entries.addAll(createEntriesFromList(electronicList, "Electronicos", idUser));
         }
 
         if (glassList != null) {
@@ -143,7 +146,7 @@ public class ProfileFragment extends Fragment{
         }
 
         if (textilesList != null) {
-            entries.addAll(createEntriesFromList(textilesList, "Textil", idUser));
+            entries.addAll(createEntriesFromList(textilesList, "Textiles", idUser));
         }
 
         if (batteryMap != null) {
@@ -161,7 +164,7 @@ public class ProfileFragment extends Fragment{
         pieData.setValueFormatter(new PercentFormatter(pieChart));
         pieChart.setData(pieData);
 
-        // Configura la apariencia del gráfico
+        // Configuración del aspecto del gráfico
         Description description = new Description();
         description.setText("");
         pieChart.setDescription(description);
@@ -205,6 +208,7 @@ public class ProfileFragment extends Fragment{
         return hasData;
     }
 
+    // Crear entradas para categorías de plástico en el gráfico
     private List<PieEntry> createEntriesFromPlasticMap(Map<String, List<PlasticItem>> itemMap, String categoryName, int idUser) {
         List<PieEntry> entries = new ArrayList<>();
 
@@ -220,6 +224,7 @@ public class ProfileFragment extends Fragment{
         return entries;
     }
 
+    // Crear entradas para categorías de acero en el gráfico
     private List<PieEntry> createEntriesFromSteelMap(Map<String, List<SteelItem>> itemMap, String categoryName, int idUser) {
         List<PieEntry> entries = new ArrayList<>();
 
@@ -235,6 +240,7 @@ public class ProfileFragment extends Fragment{
         return entries;
     }
 
+    // Crear entradas para categorías de batería en el gráfico
     private List<PieEntry> createEntriesFromBatteryMap(Map<String, List<BatteryItem>> itemMap, String categoryName, int idUser) {
         List<PieEntry> entries = new ArrayList<>();
 
@@ -250,6 +256,7 @@ public class ProfileFragment extends Fragment{
         return entries;
     }
 
+    // Crear entradas para otras categorías en el gráfico
     private List<PieEntry> createEntriesFromList(List<Category> itemList, String categoryName, int userId) {
         List<PieEntry> entries = new ArrayList<>();
 
@@ -262,6 +269,7 @@ public class ProfileFragment extends Fragment{
         return entries;
     }
 
+    // Calcular la cantidad total de los elementos en la lista
     private double calculateTotalQuantity(List<? extends Object> itemList, int userId) {
         double totalQuantity = 0;
 
@@ -276,7 +284,7 @@ public class ProfileFragment extends Fragment{
                 totalQuantity += Float.parseFloat(((PlasticItem) item).getQuantity());
             } else if (item instanceof SteelItem) {
                 totalQuantity += Float.parseFloat(((SteelItem) item).getQuantity());
-            }else if (item instanceof BatteryItem) {
+            } else if (item instanceof BatteryItem) {
                 totalQuantity += Float.parseFloat(((BatteryItem) item).getQuantity());
             }
         }
@@ -284,6 +292,7 @@ public class ProfileFragment extends Fragment{
         return totalQuantity;
     }
 
+    // Obtener colores para las secciones del gráfico
     private ArrayList<Integer> getColors() {
         ArrayList<Integer> colors = new ArrayList<>();
         colors.add(Color.parseColor("#FF5733")); // Papel
@@ -297,6 +306,7 @@ public class ProfileFragment extends Fragment{
         return colors;
     }
 
+    // Navegar a la pantalla de edición de perfil
     private void navigateToEditProfile() {
         EditProfileFragment editProfileFragment = new EditProfileFragment();
 
@@ -306,5 +316,4 @@ public class ProfileFragment extends Fragment{
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
 }

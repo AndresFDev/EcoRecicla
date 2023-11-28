@@ -9,7 +9,7 @@ public class CategoryMapper {
     static {
         categoryMap.put("PLÁSTICO", "PLASTIC");
         categoryMap.put("PAPEL", "PAPER");
-        categoryMap.put("ELECTRÓNICOS", "ELECTRONICS");
+        categoryMap.put("ELECTRÓNICOS", "ELECTRONIC");
         categoryMap.put("VIDRIO", "GLASS");
         categoryMap.put("CARTÓN", "CARDBOARD");
         categoryMap.put("METAL", "STEEL");

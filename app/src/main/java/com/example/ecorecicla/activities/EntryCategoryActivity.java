@@ -3,7 +3,6 @@ package com.example.ecorecicla.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -200,7 +199,7 @@ public class EntryCategoryActivity extends AppCompatActivity {
                 Category paperEntry = new Category(id, idUser, quantity, date, price, categoryName);
                 entry.getPaperList().add(paperEntry);
                 break;
-            case "ELECTRONICS":
+            case "ELECTRONIC":
                 if (entry.getElectronicList() == null) {
                     entry.setElectronicList(new ArrayList<>());
                 }
@@ -251,7 +250,6 @@ public class EntryCategoryActivity extends AppCompatActivity {
         }
 
         Snackbar.make(findViewById(android.R.id.content), "¿Estás seguro de guardar la información?", Snackbar.LENGTH_LONG)
-                .setTextColor(getResources().getColor(R.color.white))
                 .setAction("Aceptar", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -298,7 +296,7 @@ public class EntryCategoryActivity extends AppCompatActivity {
             case EntryData.SUCCESS:
                 Intent intent = new Intent(EntryCategoryActivity.this, MainActivity.class);
                 startActivity(intent);
-                Toast.makeText(this, "¡Guardado con exito!", Toast.LENGTH_LONG).show();
+                EcoRecicla.showNotification(getApplicationContext());
                 finish();
                 break;
             case EntryData.MISSING_FIELDS:

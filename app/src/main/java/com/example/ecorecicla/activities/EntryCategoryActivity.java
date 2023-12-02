@@ -12,13 +12,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import com.example.ecorecicla.SessionManager;
+import com.example.ecorecicla.session.SessionManager;
 import com.example.ecorecicla.models.Category;
-import com.example.ecorecicla.CategoryMapper;
-import com.example.ecorecicla.EcoRecicla;
-import com.example.ecorecicla.EntryData;
+import com.example.ecorecicla.mappers.CategoryMapper;
+import com.example.ecorecicla.models.EntryData;
 import com.example.ecorecicla.R;
-import com.example.ecorecicla.UserData;
+import com.example.ecorecicla.models.UserData;
 import com.example.ecorecicla.models.BatteryItem;
 import com.example.ecorecicla.models.Entry;
 import com.example.ecorecicla.models.PlasticItem;

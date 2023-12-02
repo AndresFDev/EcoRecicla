@@ -3,26 +3,18 @@ package com.example.ecorecicla.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.ecorecicla.R;
-import com.example.ecorecicla.SessionManager;
-import com.example.ecorecicla.UserData;
-import com.example.ecorecicla.models.User;
+import com.example.ecorecicla.session.SessionManager;
+import com.example.ecorecicla.models.UserData;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.android.material.textview.MaterialTextView;
-
-import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     private MaterialButton btnRecoveryPass, btnLogin, btnSignUp;
     private TextInputLayout tilEmail, tilPassword;
     private TextInputEditText tietEmail, tietPassword;
-    private MaterialTextView tvTitle;
     private MaterialCheckBox cbRememberSession;
 
     @Override
@@ -57,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
 
     // Inicializar vistas
     private void initializeViews() {
-        tvTitle = findViewById(R.id.tvTitle);
         tilEmail = findViewById(R.id.tilEmail);
         tilPassword = findViewById(R.id.tilPassword);
         cbRememberSession = findViewById(R.id.cbRememberSesion);

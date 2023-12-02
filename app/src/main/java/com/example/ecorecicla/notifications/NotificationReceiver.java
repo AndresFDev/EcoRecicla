@@ -1,4 +1,4 @@
-package com.example.ecorecicla;
+package com.example.ecorecicla.notifications;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

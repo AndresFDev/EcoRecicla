@@ -16,10 +16,10 @@ import android.text.TextWatcher;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.ecorecicla.SessionManager;
+import com.example.ecorecicla.session.SessionManager;
 import com.example.ecorecicla.helpers.NotificationPermissionHelper;
 import com.example.ecorecicla.R;
-import com.example.ecorecicla.UserData;
+import com.example.ecorecicla.models.UserData;
 import com.example.ecorecicla.models.User;
 import com.example.ecorecicla.utils.ImageCompressionUtil;
 import com.google.android.material.button.MaterialButton;

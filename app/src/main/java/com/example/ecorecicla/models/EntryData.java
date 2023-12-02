@@ -1,4 +1,4 @@
-package com.example.ecorecicla;
+package com.example.ecorecicla.models;
 
 import android.content.Context;
 import android.util.Log;

@@ -14,8 +14,6 @@
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
         tools:ignore="ProtectedPermissions" />
 
-
-
     <application
         android:name=".EcoRecicla"
         android:allowBackup="true"
@@ -56,13 +54,10 @@
             android:exported="false"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name=".activities.StatsDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.TipsDetailActivity"
             android:exported="false" />
 
-        <receiver android:name=".NotificationReceiver" />
+        <receiver android:name=".notifications.NotificationReceiver" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.ecorecicla;
+package com.example.ecorecicla.mappers;
 
 import java.util.HashMap;
 import java.util.Map;

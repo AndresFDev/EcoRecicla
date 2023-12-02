@@ -14,10 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecorecicla.EntryData;
+import com.example.ecorecicla.models.EntryData;
 import com.example.ecorecicla.R;
-import com.example.ecorecicla.SessionManager;
-import com.example.ecorecicla.UserData;
+import com.example.ecorecicla.session.SessionManager;
+import com.example.ecorecicla.models.UserData;
 import com.example.ecorecicla.models.BatteryItem;
 import com.example.ecorecicla.models.Category;
 import com.example.ecorecicla.models.Entry;

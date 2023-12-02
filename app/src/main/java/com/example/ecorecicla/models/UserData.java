@@ -1,19 +1,19 @@
-package com.example.ecorecicla;
+package com.example.ecorecicla.models;
 
 import android.content.Context;
 import android.util.Log;
 
+import com.example.ecorecicla.R;
+import com.example.ecorecicla.session.SessionManager;
 import com.example.ecorecicla.models.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

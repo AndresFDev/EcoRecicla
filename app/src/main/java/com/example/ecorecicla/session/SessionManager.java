@@ -1,4 +1,4 @@
-package com.example.ecorecicla;
+package com.example.ecorecicla.session;
 
 import android.content.Context;
 import android.content.SharedPreferences;

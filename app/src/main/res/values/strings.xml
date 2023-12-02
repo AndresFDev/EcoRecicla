@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">EcoRecicla</string>
+    <string name="close">Cerrar</string>
+    <string name="termsCond">Términos y Condiciones de Uso</string>
+    <string name="bodyTermyCon">Bienvenido a ECORecicla ("la Aplicación"). Antes de utilizar nuestra aplicación, por favor, lee detenidamente estos términos y condiciones.
+\n1. Almacenamiento de Datos del Usuario:
+\nLa Aplicación puede almacenar datos personales proporcionados por el usuario con el único propósito de mejorar la experiencia de reciclaje y proporcionar servicios personalizados. Estos datos se almacenan de forma segura en nuestros servidores y nunca serán recopilados, compartidos ni vendidos a terceros de ninguna manera.
+\n2. Consentimiento del Usuario:
+\nAl utilizar la Aplicación, el usuario otorga su consentimiento para el almacenamiento de datos personales según lo establecido en estos términos y condiciones. El usuario tiene el derecho de retirar su consentimiento en cualquier momento desinstalando la aplicación.
+\n3. Seguridad de los Datos:
+\nNos comprometemos a tomar medidas razonables para garantizar la seguridad de los datos del usuario. Sin embargo, no podemos garantizar la seguridad completa y no nos hacemos responsables de cualquier acceso no autorizado o divulgación de datos que esté fuera de nuestro control.
+\n4. Uso Responsable:
+\nEl usuario se compromete a utilizar la Aplicación de manera responsable y a respetar la privacidad de otros usuarios. Cualquier uso indebido o violación de estos términos y condiciones puede resultar en la suspensión o eliminación de la cuenta del usuario.
+\n5. Modificaciones de Términos y Condiciones:
+\nNos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Los cambios entrarán en vigencia después de su publicación en la Aplicación. Se alienta a los usuarios a revisar regularmente estos términos.
+\n6. Contacto:
+\nPara cualquier pregunta o inquietud relacionada con estos términos y condiciones, por favor, contáctenos a través de ecorecycla@gmail.com.
+\nAl utilizar la Aplicación, aceptas y comprendes estos términos y condiciones. Si no estás de acuerdo con alguno de estos términos, te recomendamos que no utilices la Aplicación.
+\nFecha de entrada en vigor: Enero de 2024</string>
     <string name="categories">Categorías</string>
     <string name="plastic">Plástico</string>
     <string name="paper">Papel</string>
@@ -14,7 +31,7 @@
     <string name="midTitle">Recicla</string>
     <string name="newEntry">Nueva Entrada</string>
     <string name="kg">Kg</string>
-    <string name="it1">Cantidad de plástico</string>
+    <string name="it1">Cantidad en Kg</string>
     <string name="tvDw1">Tipo de plástico</string>
     <string name="tv2">Fecha de recolección</string>
     <string name="dateFormat">DD/MM/AAAA</string>
@@ -22,7 +39,7 @@
     <string name="dollarSymbol">$</string>
     <string name="saveData">Guardar datos</string>
     <string name="dd1">Selecciona un tipo</string>
-    <string name="tips">Tips</string>
+    <string name="tip">Tips</string>
     <string name="forguetPass">¿Olvidó su contraseña?</string>
     <string name="password">Contraseña</string>
     <string name="email">Correo electrónico</string>
@@ -96,6 +113,13 @@
     <string name="numKgTotal">290</string>
     <string name="valKgTotal">200</string>
     <string name="valTotalSum">58000</string>
-    <string name="daysOff">Días restantes de los tips:</string>
+    <string name="daysOff">Días restantes de los tip:</string>
     <string name="valDaysOff">0</string>
+    <string name="messageProfile">\" Entuciasta del reciclaje \"</string>
+    <string name="profile">Perfil</string>
+    <string name="you">Tu</string>
+    <string name="passRegex">^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$</string>
+    <string name="credential">Nombre de usuario o correo electrónico</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

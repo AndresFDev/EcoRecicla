@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SplashScreenTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    tools:context=".SplashActivity">
+    tools:context=".activities.SplashActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glHorizontal"
@@ -14,15 +14,38 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.42" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="2dp"
-        android:src="@drawable/ic_appv2"
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/glHorizontal"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|end"
+            android:scaleType="centerCrop"
+            android:translationY="-25dp"
+            android:translationX="-46dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="anm_icon.json"
+            app:lottie_imageAssetsFolder="assets"
+            app:lottie_loop="true"
+            app:lottie_speed="0.9"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/ic_appv2" />
+
+    </FrameLayout>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvTitle"
@@ -41,11 +64,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:textSize="18sp"
         android:fontFamily="@font/product_sans_italic"
         android:text="@string/slogan"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

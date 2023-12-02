@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.Material3.DayNight.Dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        style="PermissionDialogStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_notification"
+            app:tint="?attr/colorAccent" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/product_sans_bold"
+            android:text="¿Permitir que EcoRecicla pueda habilitar las notificaciones para esta aplicación?"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccept"
+            style="@style/ButtonBarButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/form_corner_button_top"
+            android:text="Permitir" />
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonBarButton"
+            android:background="@drawable/form_corner_button_bottom"
+            android:text="No permitir" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
